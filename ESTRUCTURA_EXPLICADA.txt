@@ -1,0 +1,226 @@
+================================================================
+  NIGHTPASS — EXPLICACION DE ARCHIVOS Y CARPETAS DEL PROYECTO
+================================================================
+Repositorio: https://github.com/hashernom/nightpass-app
+Fecha: Marzo 2026
+================================================================
+
+
+════════════════════════════════════════════════════════════════
+  ARCHIVOS RAIZ — EL CEREBRO DEL MONOREPO
+════════════════════════════════════════════════════════════════
+
+package.json
+------------
+Es el archivo principal de configuracion del proyecto. Le dice a
+pnpm que esto es un monorepo con workspaces, lo que significa que
+apps/web, apps/api y los packages/ son sub-proyectos que comparten
+dependencias. Tambien define los scripts globales como "pnpm dev"
+(que arranca todo a la vez) y declara que el proyecto requiere
+Node 20 y pnpm 9.
+
+turbo.json
+----------
+Es la configuracion de Turborepo, la herramienta que coordina el
+monorepo. Define el orden en que deben ejecutarse las tareas: por
+ejemplo, antes de hacer build de la web, primero debe hacer build
+del api. Tambien administra la cache de builds para que si no cambio
+nada en el api, no lo vuelva a compilar innecesariamente.
+
+README.md
+---------
+La documentacion de entrada del proyecto. Es lo primero que ve
+cualquier dev que entre al repositorio en GitHub. Tiene el stack
+resumido, la estructura de carpetas, como hacer el setup local paso
+a paso, y los 3 roles del sistema.
+
+.gitignore
+----------
+Le dice a git que archivos NUNCA debe subir al repositorio. Incluye:
+- node_modules (librerias instaladas localmente)
+- .env.local (claves secretas)
+- .next y dist (archivos compilados)
+- .turbo (cache de builds)
+Sin este archivo, accidentalmente se suberian las claves de Stripe
+u otras claves secretas a GitHub, lo cual es un riesgo de seguridad
+critico.
+
+
+════════════════════════════════════════════════════════════════
+  .github/workflows/ci.yml — EL GUARDIAN DEL CODIGO
+════════════════════════════════════════════════════════════════
+
+Este archivo define el pipeline automatico de integracion continua.
+Cada vez que alguien abre un Pull Request o hace push a main,
+GitHub ejecuta automaticamente estos pasos en orden:
+
+  1. Instalar dependencias
+  2. Lint (revision de estilo de codigo con ESLint)
+  3. Type-check (verificacion de tipos con TypeScript)
+  4. Tests unitarios (Vitest)
+  5. Build de ambas apps
+  6. Audit de seguridad (npm audit --audit-level=critical)
+
+Si cualquier paso falla, el merge queda BLOQUEADO. Nadie puede
+meter codigo roto al repositorio.
+
+
+════════════════════════════════════════════════════════════════
+  apps/api/ — EL BACKEND (NestJS)
+════════════════════════════════════════════════════════════════
+
+apps/api/.env.example
+---------------------
+Es una plantilla con las 30 variables de entorno que necesita el
+backend para funcionar, pero SIN los valores reales. Cada dev copia
+este archivo como .env.local y pone sus propias claves (Stripe,
+Supabase, Redis, etc.). El .env.local nunca se sube al repo. Este
+archivo si se sube para que cualquier dev sepa exactamente que
+necesita configurar.
+
+apps/api/prisma/schema.prisma
+------------------------------
+Es el archivo MAS IMPORTANTE del backend. Define toda la estructura
+de la base de datos en un lenguaje que Prisma entiende. Tiene las
+9 tablas del sistema con todos sus campos, tipos, relaciones y
+constraints:
+
+  - User           (usuarios del sistema)
+  - Venue          (locales nocturnos)
+  - TablePalco     (palcos dentro de los venues)
+  - Event          (eventos con fecha, precio, capacidad)
+  - Promotion      (codigos de descuento por evento)
+  - TableEventReservation (reservas de palcos)
+  - Payment        (registro de pagos con Stripe/Wompi)
+  - Ticket         (tickets con QR firmado)
+  - PaymentAuditLog (log inmutable de eventos de pago)
+  - ScanAuditLog   (log inmutable de escaneos de QR)
+
+A partir de este archivo, Prisma genera automaticamente:
+  - El cliente TypeScript para hacer queries a la DB
+  - Las migraciones SQL que crean las tablas en PostgreSQL
+
+apps/api/src/modules/ — carpetas de modulos (vacias por ahora)
+---------------------------------------------------------------
+  auth/          -> Login, OAuth Google/Apple, JWT, refresh tokens
+  users/         -> Perfil de usuario, actualizacion de datos
+  venues/        -> CRUD de locales nocturnos
+  events/        -> CRUD de eventos, publicacion, estadisticas
+  tickets/       -> Compra de covers, gestion de tickets
+  payments/      -> Stripe, Wompi, webhooks, audit log
+  scanner/       -> Validacion del QR en puerta
+  notifications/ -> Emails transaccionales con BullMQ + Resend
+  admin/         -> Panel B2B para venues
+
+apps/api/src/shared/ — codigo compartido entre todos los modulos
+----------------------------------------------------------------
+  guards/      -> JwtAuthGuard y RolesGuard (bloquean acceso segun rol)
+  decorators/  -> @Roles() y @CurrentUser() para usar en controladores
+  filters/     -> Manejo global de errores HTTP y errores de Prisma
+  prisma/      -> Servicio de Prisma compartido para conectarse a la DB
+
+
+════════════════════════════════════════════════════════════════
+  apps/web/ — EL FRONTEND (Next.js 14)
+════════════════════════════════════════════════════════════════
+
+apps/web/.env.example
+---------------------
+Igual que el del api pero para el frontend. Tiene las 6 variables
+que necesita Next.js:
+  - URL del api
+  - Claves publicas de Supabase y Stripe (las que si pueden estar en cliente)
+  - Claves de PostHog para analitica de producto
+
+apps/web/app/ — paginas del proyecto (App Router de Next.js 14)
+---------------------------------------------------------------
+Los parentesis en los nombres son grupos de rutas: organizan el
+codigo pero no afectan la URL que ve el usuario.
+
+  (auth)/        -> Paginas de login y registro
+  (marketplace)/ -> Listado de eventos y detalle de evento
+  (checkout)/    -> Flujo de compra y pantalla de exito
+  (dashboard)/   -> Mis tickets y pantalla del QR Fast Pass
+  (scanner)/     -> Interfaz del scanner para Staff en puerta
+  (admin)/       -> Panel B2B para Admin Venue
+
+apps/web/components/
+--------------------
+  ui/       -> Componentes base de shadcn/ui (botones, inputs, modales)
+  features/ -> Componentes especificos de NightPass:
+               card de evento, QR display, checkout form, etc.
+
+apps/web/lib/
+-------------
+Utilidades y logica del frontend:
+  - Hooks de React Query para fetching de datos
+  - Stores de Zustand para estado global
+  - Cliente axios configurado con la URL del api
+  - Helpers de autenticacion
+  - Renderizador de QR con qrcode.react
+
+
+════════════════════════════════════════════════════════════════
+  packages/ — CODIGO COMPARTIDO ENTRE WEB Y API
+════════════════════════════════════════════════════════════════
+
+packages/types/
+---------------
+Tipos TypeScript compartidos entre el frontend y el backend.
+Si el backend define como luce un User o un Ticket, el frontend
+importa ese mismo tipo. Esto garantiza que ambos hablen el mismo
+lenguaje y que un cambio en un campo se detecte en los dos lados
+en tiempo de compilacion, antes de llegar a produccion.
+
+packages/zod-schemas/
+---------------------
+Schemas de validacion de Zod compartidos. La misma regla de
+validacion (ej: "el email debe ser valido, la password minimo
+8 caracteres") se usa tanto en el formulario del frontend COMO
+en el DTO del backend. Sin esto, cada uno implementa la validacion
+por su lado y pueden desincronizarse, generando bugs dificiles de
+rastrear.
+
+packages/config/
+----------------
+Configuracion compartida de ESLint y TypeScript. En vez de que
+apps/web y apps/api tengan cada uno su propia configuracion (que
+puede diferir con el tiempo), ambos extienden la misma base.
+Garantiza que el estilo de codigo sea uniforme en todo el proyecto.
+
+
+════════════════════════════════════════════════════════════════
+  .git/ — HISTORIAL DE GIT (NO SE TOCA MANUALMENTE)
+════════════════════════════════════════════════════════════════
+
+Esta carpeta la gestiona git automaticamente. Guarda todo el
+historial de commits, las referencias al repositorio remoto en
+GitHub, y los objetos internos del repositorio. Nunca se modifica
+a mano. Si se daña, se puede perder el historial del proyecto.
+
+
+════════════════════════════════════════════════════════════════
+  RESUMEN RAPIDO — PARA QUE SIRVE CADA COSA
+════════════════════════════════════════════════════════════════
+
+  package.json        -> Configuracion del monorepo y dependencias globales
+  turbo.json          -> Coordina el orden de build entre apps y packages
+  README.md           -> Documentacion de entrada para nuevos devs
+  .gitignore          -> Evita subir archivos sensibles o innecesarios a GitHub
+  ci.yml              -> Pipeline automatico: lint, tests, build, audit por cada PR
+  .env.example (api)  -> Plantilla de las 30 variables del backend
+  .env.example (web)  -> Plantilla de las 6 variables del frontend
+  schema.prisma       -> Estructura completa de la base de datos (9 tablas)
+  src/modules/        -> Donde vive toda la logica del backend por feature
+  src/shared/         -> Guards, decorators y filtros reutilizables del backend
+  app/                -> Paginas del frontend organizadas por rol de usuario
+  components/         -> Componentes React reutilizables
+  lib/                -> Hooks, stores y utilidades del frontend
+  packages/types/     -> Tipos TypeScript compartidos entre web y api
+  packages/zod-schemas/ -> Validaciones compartidas entre web y api
+  packages/config/    -> Configuracion de ESLint y TS compartida
+
+
+================================================================
+  NightPass — Documentacion de estructura v1.0 — Marzo 2026
+================================================================
