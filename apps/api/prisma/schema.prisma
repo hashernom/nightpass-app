@@ -1,0 +1,229 @@
+// This is the NightPass Prisma schema
+// Generated from ERD v2.0
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+enum UserRole {
+  USER
+  STAFF_SCANNER
+  ADMIN_VENUE
+}
+
+enum AuthProvider {
+  LOCAL
+  GOOGLE
+  APPLE
+}
+
+enum EventStatus {
+  DRAFT
+  PUBLISHED
+  CANCELLED
+}
+
+enum TicketStatus {
+  PENDING
+  ACTIVE
+  VALIDATED
+  EXPIRED
+  CANCELLED
+}
+
+enum PaymentStatus {
+  PENDING
+  SUCCEEDED
+  FAILED
+  REFUNDED
+  DISPUTED
+}
+
+enum PaymentGateway {
+  STRIPE
+  WOMPI
+  MERCADOPAGO
+}
+
+enum DiscountType {
+  PERCENT
+  FIXED
+}
+
+enum TableStatus {
+  AVAILABLE
+  RESERVED
+  CONFIRMED
+}
+
+enum ScanResult {
+  SUCCESS
+  INVALID
+  DUPLICATE
+  EXPIRED
+}
+
+model User {
+  id           String       @id @default(uuid())
+  email        String       @unique
+  name         String
+  passwordHash String?
+  provider     AuthProvider @default(LOCAL)
+  role         UserRole     @default(USER)
+  avatarUrl    String?
+  isActive     Boolean      @default(true)
+  createdAt    DateTime     @default(now())
+  updatedAt    DateTime     @updatedAt
+
+  venues       Venue[]
+  tickets      Ticket[]
+  payments     Payment[]
+  scanLogs     ScanAuditLog[]
+  reservations TableEventReservation[]
+}
+
+model Venue {
+  id             String   @id @default(uuid())
+  ownerId        String
+  name           String
+  city           String
+  address        String
+  capacity       Int
+  description    String?
+  coverImageUrl  String?
+  isActive       Boolean  @default(true)
+  createdAt      DateTime @default(now())
+
+  owner          User     @relation(fields: [ownerId], references: [id])
+  events         Event[]
+  tables         TablePalco[]
+}
+
+model TablePalco {
+  id          String   @id @default(uuid())
+  venueId     String
+  name        String
+  capacity    Int
+  price       Decimal  @db.Decimal(10, 2)
+  description String?
+  isActive    Boolean  @default(true)
+
+  venue        Venue   @relation(fields: [venueId], references: [id])
+  reservations TableEventReservation[]
+}
+
+model Event {
+  id             String      @id @default(uuid())
+  venueId        String
+  name           String
+  description    String?
+  date           DateTime
+  doorsOpen      DateTime
+  coverPrice     Decimal     @db.Decimal(10, 2)
+  maxCapacity    Int
+  ticketsSold    Int         @default(0)
+  musicGenre     String
+  bannerImageUrl String?
+  status         EventStatus @default(DRAFT)
+  createdAt      DateTime    @default(now())
+
+  venue        Venue       @relation(fields: [venueId], references: [id])
+  tickets      Ticket[]
+  promotions   Promotion[]
+  reservations TableEventReservation[]
+  payments     Payment[]
+}
+
+model Promotion {
+  id            String       @id @default(uuid())
+  eventId       String
+  title         String
+  discountType  DiscountType
+  discountValue Decimal      @db.Decimal(10, 2)
+  maxUses       Int
+  usesCount     Int          @default(0)
+  validUntil    DateTime
+  code          String?      @unique
+  isActive      Boolean      @default(true)
+
+  event Event @relation(fields: [eventId], references: [id])
+}
+
+model TableEventReservation {
+  id      String      @id @default(uuid())
+  tableId String
+  eventId String
+  userId  String
+  status  TableStatus @default(AVAILABLE)
+  price   Decimal     @db.Decimal(10, 2)
+  createdAt DateTime  @default(now())
+
+  table   TablePalco @relation(fields: [tableId], references: [id])
+  event   Event      @relation(fields: [eventId], references: [id])
+  user    User       @relation(fields: [userId], references: [id])
+}
+
+model Payment {
+  id                String        @id @default(uuid())
+  userId            String
+  eventId           String
+  amount            Decimal       @db.Decimal(10, 2)
+  currency          String        @default("COP")
+  gateway           PaymentGateway
+  gatewayPaymentId  String        @unique
+  idempotencyKey    String        @unique
+  status            PaymentStatus @default(PENDING)
+  createdAt         DateTime      @default(now())
+  updatedAt         DateTime      @updatedAt
+
+  user      User             @relation(fields: [userId], references: [id])
+  event     Event            @relation(fields: [eventId], references: [id])
+  ticket    Ticket?
+  auditLogs PaymentAuditLog[]
+}
+
+model Ticket {
+  id               String       @id @default(uuid())
+  userId           String
+  eventId          String
+  paymentId        String       @unique
+  qrToken          String       @unique
+  qrSignedPayload  String
+  status           TicketStatus @default(PENDING)
+  validatedAt      DateTime?
+  createdAt        DateTime     @default(now())
+
+  user     User           @relation(fields: [userId], references: [id])
+  event    Event          @relation(fields: [eventId], references: [id])
+  payment  Payment        @relation(fields: [paymentId], references: [id])
+  scanLogs ScanAuditLog[]
+}
+
+model PaymentAuditLog {
+  id           String   @id @default(uuid())
+  paymentId    String
+  action       String
+  gatewayEvent String
+  metadata     Json?
+  createdAt    DateTime @default(now())
+
+  payment Payment @relation(fields: [paymentId], references: [id])
+}
+
+model ScanAuditLog {
+  id        String     @id @default(uuid())
+  ticketId  String
+  scannerId String
+  result    ScanResult
+  ipAddress String?
+  scannedAt DateTime   @default(now())
+
+  ticket  Ticket @relation(fields: [ticketId], references: [id])
+  scanner User   @relation(fields: [scannerId], references: [id])
+}
