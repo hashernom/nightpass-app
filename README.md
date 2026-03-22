@@ -1,4 +1,4 @@
-# NightPass 🎟️
+# NightPass 
 
 > Plataforma de ticketing para vida nocturna — MVP Web App
 
