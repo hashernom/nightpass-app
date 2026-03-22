@@ -1,0 +1,12 @@
+{
+  "root": true,
+  "extends": ["./packages/config/eslint-base.js"],
+  "ignorePatterns": [
+    "node_modules/",
+    "dist/",
+    ".next/",
+    "coverage/",
+    "*.config.js",
+    "*.config.ts"
+  ]
+}
