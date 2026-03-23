@@ -3,6 +3,8 @@ import { ConfigModule } from '@nestjs/config';
 import { ThrottlerModule } from '@nestjs/throttler';
 import { AppController } from './app.controller';
 import { AuthModule } from './modules/auth/auth.module';
+import { VenuesModule } from './modules/venues/venues.module';
+import { EventsModule } from './modules/events/events.module';
 
 @Module({
   imports: [
@@ -23,10 +25,12 @@ import { AuthModule } from './modules/auth/auth.module';
     // Módulo de autenticación
     AuthModule,
 
+    // Módulos de negocio
+    VenuesModule,
+    EventsModule,
+
     // Los modulos se van añadiendo aqui conforme se implementan:
     // UsersModule,
-    // VenuesModule,
-    // EventsModule,
     // TicketsModule,
     // PaymentsModule,
     // ScannerModule,
