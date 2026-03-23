@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { ThrottlerModule } from '@nestjs/throttler';
 import { AppController } from './app.controller';
+import { AuthModule } from './modules/auth/auth.module';
 
 @Module({
   imports: [
@@ -19,8 +20,10 @@ import { AppController } from './app.controller';
       },
     ]),
 
+    // Módulo de autenticación
+    AuthModule,
+
     // Los modulos se van añadiendo aqui conforme se implementan:
-    // AuthModule,
     // UsersModule,
     // VenuesModule,
     // EventsModule,
