@@ -20,6 +20,11 @@ import { EventsModule } from './modules/events/events.module';
         ttl: 60000,
         limit: 100,
       },
+      {
+        name: 'auth',
+        ttl: 60000,
+        limit: 10, // Más estricto para endpoints de autenticación
+      },
     ]),
 
     // Módulo de autenticación

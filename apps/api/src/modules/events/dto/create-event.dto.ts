@@ -11,6 +11,7 @@ import {
 } from 'class-validator';
 import { Transform } from 'class-transformer';
 import { EventStatus } from '@prisma/client';
+import { IsBefore } from '../../../shared/validators/is-before.validator';
 
 export class CreateEventDto {
   @ApiProperty({
@@ -37,6 +38,7 @@ export class CreateEventDto {
     description: 'Fecha y hora de apertura de puertas',
   })
   @IsDateString()
+  @IsBefore('date')
   doorsOpen!: string;
 
   @ApiProperty({ example: 50.0, description: 'Precio de entrada' })

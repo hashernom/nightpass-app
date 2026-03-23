@@ -66,3 +66,28 @@ export async function publishEvent(
   );
   return response.data;
 }
+
+// Versión para Server Components con revalidación incremental
+export async function fetchEventsServer(
+  filters: EventFilters,
+): Promise<PaginatedResponse<EventDto>> {
+  const params = new URLSearchParams();
+  if (filters.city) params.append('city', filters.city);
+  if (filters.genre) params.append('genre', filters.genre);
+  if (filters.dateFrom) params.append('dateFrom', filters.dateFrom);
+  if (filters.dateTo) params.append('dateTo', filters.dateTo);
+  if (filters.page) params.append('page', filters.page.toString());
+  if (filters.limit) params.append('limit', filters.limit.toString());
+  // search se maneja como query param adicional (no es parte del endpoint original)
+  // Podemos implementar búsqueda en el backend más adelante
+
+  const response = await fetch(`${API_BASE}/events?${params.toString()}`, {
+    next: { revalidate: 60 }, // Revalidación cada 60 segundos
+  });
+
+  if (!response.ok) {
+    throw new Error(`Failed to fetch events: ${response.statusText}`);
+  }
+
+  return response.json();
+}
