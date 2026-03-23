@@ -1,4 +1,5 @@
 # NightPass — Documentación UML Completa
+
 > Todos los diagramas de arquitectura, flujos y estructura del proyecto.
 > Stack: NestJS 10 + Next.js 14 + PostgreSQL 16 + Redis 7 + Supabase + Stripe + Wompi
 > Versión: MVP v2.0 · Marzo 2026
@@ -6,6 +7,7 @@
 ---
 
 ## Índice
+
 1. [Arquitectura General](#1-arquitectura-general)
 2. [Flujo de Compra de Cover y Pagos](#2-flujo-de-compra-de-cover-y-pagos)
 3. [Flujo de Validación QR en Puerta](#3-flujo-de-validación-qr-en-puerta)
@@ -450,45 +452,45 @@ erDiagram
 
 Qué puede hacer cada rol en cada grupo de endpoints. Leyenda: SI = permitido, NO = denegado (403).
 
-| Endpoint | Metodo | USER | STAFF_SCANNER | ADMIN_VENUE |
-|----------|--------|------|---------------|-------------|
-| /auth/register | POST | SI | SI | SI |
-| /auth/login | POST | SI | SI | SI |
-| /auth/google | GET | SI | SI | SI |
-| /auth/refresh | POST | SI | SI | SI |
-| /auth/logout | POST | SI | SI | SI |
-| /users/me | GET | SI | SI | SI |
-| /users/me | PATCH | SI | SI | SI |
-| /venues | GET | SI | SI | SI |
-| /venues/:id | GET | SI | SI | SI |
-| /venues | POST | NO | NO | SI |
-| /venues/:id | PATCH | NO | NO | SI |
-| /venues/:id/dashboard | GET | NO | NO | SI |
-| /events | GET | SI | SI | SI |
-| /events/:id | GET | SI | SI | SI |
-| /events | POST | NO | NO | SI |
-| /events/:id | PATCH | NO | NO | SI |
-| /events/:id/publish | PATCH | NO | NO | SI |
-| /events/:id/stats | GET | NO | NO | SI |
-| /tickets/checkout | POST | SI | NO | NO |
-| /tickets/my | GET | SI | NO | NO |
-| /tickets/:id | GET | SI | NO | NO |
-| /tickets/validate | POST | NO | SI | NO |
-| /tickets/event/:id | GET | NO | NO | SI |
-| /payments/webhook/stripe | POST | Sistema | Sistema | Sistema |
-| /payments/webhook/wompi | POST | Sistema | Sistema | Sistema |
-| /payments/my | GET | SI | NO | NO |
-| /payments/event/:id | GET | NO | NO | SI |
-| /staff/assign | POST | NO | NO | SI |
-| /staff/scan-logs/:eventId | GET | NO | SI | SI |
+| Endpoint                  | Metodo | USER    | STAFF_SCANNER | ADMIN_VENUE |
+| ------------------------- | ------ | ------- | ------------- | ----------- |
+| /auth/register            | POST   | SI      | SI            | SI          |
+| /auth/login               | POST   | SI      | SI            | SI          |
+| /auth/google              | GET    | SI      | SI            | SI          |
+| /auth/refresh             | POST   | SI      | SI            | SI          |
+| /auth/logout              | POST   | SI      | SI            | SI          |
+| /users/me                 | GET    | SI      | SI            | SI          |
+| /users/me                 | PATCH  | SI      | SI            | SI          |
+| /venues                   | GET    | SI      | SI            | SI          |
+| /venues/:id               | GET    | SI      | SI            | SI          |
+| /venues                   | POST   | NO      | NO            | SI          |
+| /venues/:id               | PATCH  | NO      | NO            | SI          |
+| /venues/:id/dashboard     | GET    | NO      | NO            | SI          |
+| /events                   | GET    | SI      | SI            | SI          |
+| /events/:id               | GET    | SI      | SI            | SI          |
+| /events                   | POST   | NO      | NO            | SI          |
+| /events/:id               | PATCH  | NO      | NO            | SI          |
+| /events/:id/publish       | PATCH  | NO      | NO            | SI          |
+| /events/:id/stats         | GET    | NO      | NO            | SI          |
+| /tickets/checkout         | POST   | SI      | NO            | NO          |
+| /tickets/my               | GET    | SI      | NO            | NO          |
+| /tickets/:id              | GET    | SI      | NO            | NO          |
+| /tickets/validate         | POST   | NO      | SI            | NO          |
+| /tickets/event/:id        | GET    | NO      | NO            | SI          |
+| /payments/webhook/stripe  | POST   | Sistema | Sistema       | Sistema     |
+| /payments/webhook/wompi   | POST   | Sistema | Sistema       | Sistema     |
+| /payments/my              | GET    | SI      | NO            | NO          |
+| /payments/event/:id       | GET    | NO      | NO            | SI          |
+| /staff/assign             | POST   | NO      | NO            | SI          |
+| /staff/scan-logs/:eventId | GET    | NO      | SI            | SI          |
 
 ### Roles del sistema
 
-| Rol | Descripcion | Casos de uso |
-|-----|-------------|--------------|
-| USER | Comprador de covers | Buscar eventos, comprar tickets, ver QR, ver historial |
-| STAFF_SCANNER | Validador de puerta | Escanear QR en la entrada, ver logs de su evento |
-| ADMIN_VENUE | Administrador del local | Crear eventos, ver dashboard, gestionar palcos y staff |
+| Rol           | Descripcion             | Casos de uso                                           |
+| ------------- | ----------------------- | ------------------------------------------------------ |
+| USER          | Comprador de covers     | Buscar eventos, comprar tickets, ver QR, ver historial |
+| STAFF_SCANNER | Validador de puerta     | Escanear QR en la entrada, ver logs de su evento       |
+| ADMIN_VENUE   | Administrador del local | Crear eventos, ver dashboard, gestionar palcos y staff |
 
 ---
 
@@ -564,53 +566,91 @@ flowchart LR
 ## Resumen del Stack Tecnológico
 
 ### Frontend
-| Tecnología | Versión | Rol |
-|-----------|---------|-----|
-| Next.js | 14+ | Framework principal con SSR/SSG |
-| TypeScript | 5.x | Lenguaje base |
-| Tailwind CSS | 3.x | Estilos utilitarios |
-| shadcn/ui | latest | Componentes accesibles |
-| React Query | 5.x | Fetching y cache del cliente |
-| Zustand | 4.x | Estado global |
-| Zod | 3.x | Validacion de schemas |
-| qrcode.react | 3.x | Generacion de QR Fast Pass |
-| Framer Motion | 11.x | Animaciones UI |
+
+| Tecnología    | Versión | Rol                             |
+| ------------- | ------- | ------------------------------- |
+| Next.js       | 14+     | Framework principal con SSR/SSG |
+| TypeScript    | 5.x     | Lenguaje base                   |
+| Tailwind CSS  | 3.x     | Estilos utilitarios             |
+| shadcn/ui     | latest  | Componentes accesibles          |
+| React Query   | 5.x     | Fetching y cache del cliente    |
+| Zustand       | 4.x     | Estado global                   |
+| Zod           | 3.x     | Validacion de schemas           |
+| qrcode.react  | 3.x     | Generacion de QR Fast Pass      |
+| Framer Motion | 11.x    | Animaciones UI                  |
 
 ### Backend
-| Tecnología | Versión | Rol |
-|-----------|---------|-----|
-| NestJS | 10.x | Framework API REST modular |
-| TypeScript | 5.x | Lenguaje base |
-| Prisma ORM | 5.x | ORM + migraciones |
-| Passport.js | 0.7 | Estrategias de auth |
-| BullMQ | 4.x | Colas de trabajo async |
-| crypto (Node) | built-in | Firma HMAC-SHA256 para QR |
-| Swagger | 7.x | Documentacion API auto-generada |
+
+| Tecnología    | Versión  | Rol                             |
+| ------------- | -------- | ------------------------------- |
+| NestJS        | 10.x     | Framework API REST modular      |
+| TypeScript    | 5.x      | Lenguaje base                   |
+| Prisma ORM    | 5.x      | ORM + migraciones               |
+| Passport.js   | 0.7      | Estrategias de auth             |
+| BullMQ        | 4.x      | Colas de trabajo async          |
+| crypto (Node) | built-in | Firma HMAC-SHA256 para QR       |
+| Swagger       | 7.x      | Documentacion API auto-generada |
 
 ### Infraestructura
-| Servicio | Proveedor | Rol |
-|---------|-----------|-----|
-| PostgreSQL 16 | Supabase | DB transaccional principal |
-| Redis 7 | Upstash | Cache, sesiones, locks QR |
-| Frontend hosting | Vercel | Deploy auto + CDN global |
-| Backend hosting | Railway | Deploy NestJS |
-| DNS + DDoS | Cloudflare | TLS automatico + proteccion L7 |
-| Emails | Resend | Tickets, confirmaciones |
-| Errores | Sentry | Alertas en tiempo real |
-| Analitica | PostHog | Funnels y retencion |
+
+| Servicio         | Proveedor  | Rol                            |
+| ---------------- | ---------- | ------------------------------ |
+| PostgreSQL 16    | Supabase   | DB transaccional principal     |
+| Redis 7          | Upstash    | Cache, sesiones, locks QR      |
+| Frontend hosting | Vercel     | Deploy auto + CDN global       |
+| Backend hosting  | Railway    | Deploy NestJS                  |
+| DNS + DDoS       | Cloudflare | TLS automatico + proteccion L7 |
+| Emails           | Resend     | Tickets, confirmaciones        |
+| Errores          | Sentry     | Alertas en tiempo real         |
+| Analitica        | PostHog    | Funnels y retencion            |
 
 ### Seguridad por capas (Defense in Depth)
-| Capa | Mecanismo | Protege contra |
-|------|-----------|----------------|
-| Transporte | TLS 1.3 via Cloudflare | Intercepcion de trafico |
-| Autenticacion | JWT RS256 + OAuth 2.1 + PKCE | Robo de credenciales |
-| Autorizacion | RBAC con NestJS Guards | Acceso no autorizado |
-| QR | HMAC-SHA256 + TTL 24h + Redis SETNX | Falsificacion y duplicados |
-| Pagos | Tokenizacion Stripe/Wompi + Webhooks firmados | PCI DSS |
-| API | Helmet.js + CORS estricto + Rate limiting | XSS, DDoS, fuerza bruta |
-| Datos | Prisma prepared statements | SQL injection |
-| Auditoria | Logs inmutables (append-only) | Disputas y chargebacks |
+
+| Capa          | Mecanismo                                     | Protege contra             |
+| ------------- | --------------------------------------------- | -------------------------- |
+| Transporte    | TLS 1.3 via Cloudflare                        | Intercepcion de trafico    |
+| Autenticacion | JWT RS256 + OAuth 2.1 + PKCE                  | Robo de credenciales       |
+| Autorizacion  | RBAC con NestJS Guards                        | Acceso no autorizado       |
+| QR            | HMAC-SHA256 + TTL 24h + Redis SETNX           | Falsificacion y duplicados |
+| Pagos         | Tokenizacion Stripe/Wompi + Webhooks firmados | PCI DSS                    |
+| API           | Helmet.js + CORS estricto + Rate limiting     | XSS, DDoS, fuerza bruta    |
+| Datos         | Prisma prepared statements                    | SQL injection              |
+| Auditoria     | Logs inmutables (append-only)                 | Disputas y chargebacks     |
 
 ---
 
-*NightPass — Documentacion UML v2.0 — Marzo 2026*
+## 10. Documentación de Referencia
+
+### Documentación Técnica Disponible
+
+| Documento                   | Ubicación                                              | Descripción                                         |
+| --------------------------- | ------------------------------------------------------ | --------------------------------------------------- |
+| **API Endpoints**           | [`docs/API_ENDPOINTS.md`](docs/API_ENDPOINTS.md)       | Especificación completa de todos los endpoints REST |
+| **Swagger UI**              | `http://localhost:3001/api/docs`                       | Documentación interactiva de la API                 |
+| **OpenAPI Spec**            | `http://localhost:3001/api/docs-json`                  | Especificación OpenAPI 3.0 en JSON                  |
+| **README Principal**        | [`README.md`](README.md)                               | Guía completa de inicio y uso                       |
+| **Estructura del Proyecto** | [`ESTRUCTURA_EXPLICADA.txt`](ESTRUCTURA_EXPLICADA.txt) | Explicación detallada de cada archivo               |
+| **Guía de Onboarding**      | [`ONBOARDING.txt`](ONBOARDING.txt)                     | Instrucciones para nuevos colaboradores             |
+
+### Relación entre Diagramas y Implementación
+
+Los diagramas de esta documentación corresponden directamente a:
+
+1. **Arquitectura General** → Configuración en [`apps/api/src/main.ts`](apps/api/src/main.ts)
+2. **ERD de Base de Datos** → Schema Prisma en [`apps/api/prisma/schema.prisma`](apps/api/prisma/schema.prisma)
+3. **Flujos de Compra y Validación** → Lógica en módulos `tickets/` y `scanner/`
+4. **Matriz de Permisos** → Implementación en [`apps/api/src/shared/guards/`](apps/api/src/shared/guards/)
+5. **Estructura de Módulos** → Organización real del monorepo
+
+### Próximas Actualizaciones de Diagramas
+
+- Actualizar Gantt cuando se completen épicas del MVP
+- Añadir diagrama de secuencia para notificaciones por email
+- Incluir diagrama de deployment multi-región
+- Actualizar ERD cuando se añadan nuevas tablas
+
+---
+
+_NightPass — Documentacion UML v2.1 — Marzo 2026_
+
+> **Nota**: Esta documentación se mantiene sincronizada con el código. Cualquier cambio en la arquitectura debe reflejarse aquí.

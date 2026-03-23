@@ -1,0 +1,269 @@
+================================================================
+  NIGHTPASS — GUIA DE ONBOARDING Y FLUJO DE TRABAJO
+  Para nuevos colaboradores del equipo
+================================================================
+
+
+PREREQUISITOS — INSTALAR ANTES DE CLONAR
+================================================================
+
+1. Node.js — cualquier version reciente
+   Descargar en: https://nodejs.org
+
+2. pnpm — el manejador de paquetes del proyecto
+   Abrir una terminal y ejecutar:
+   npm install -g pnpm
+
+3. Git
+   Descargar en: https://git-scm.com
+
+4. PostgreSQL 18
+   Descargar en: https://www.postgresql.org/download/
+   Durante la instalacion te pide una contrasena para el usuario
+   "postgres" — guardala bien, la vas a necesitar.
+
+5. pgAdmin (viene incluido con PostgreSQL)
+   Lo usas para crear la base de datos local.
+
+6. Un editor de codigo — se recomienda VS Code
+   Descargar en: https://code.visualstudio.com
+
+
+SETUP INICIAL — HACERLO UNA SOLA VEZ
+================================================================
+
+Paso 1 — Clonar el repositorio
+
+   git clone https://github.com/hashernom/nightpass-app.git
+   cd nightpass-app
+
+
+Paso 2 — Instalar dependencias
+
+   pnpm install
+
+   Esto instala todos los paquetes de las dos apps y los
+   packages compartidos de una sola vez. Puede tardar unos
+   minutos la primera vez.
+
+
+Paso 3 — Crear la base de datos local
+
+   Abre pgAdmin, busca "Databases" en el panel izquierdo,
+   clic derecho -> Create -> Database.
+   Nombrarla exactamente: nightpass_dev
+   Guardar.
+
+
+Paso 4 — Configurar las variables de entorno
+
+   Ejecutar en la terminal desde la raiz del proyecto:
+
+   Windows (PowerShell):
+   copy apps\api\.env.example apps\api\.env.local
+   copy apps\web\.env.example apps\web\.env.local
+
+   Mac/Linux:
+   cp apps/api/.env.example apps/api/.env.local
+   cp apps/web/.env.example apps/web/.env.local
+
+   Luego abrir apps/api/.env.local y editar estas dos lineas
+   con tu usuario y contrasena de PostgreSQL:
+
+   DATABASE_URL=postgresql://postgres:TU_CONTRASENA@localhost:5432/nightpass_dev
+   DIRECT_URL=postgresql://postgres:TU_CONTRASENA@localhost:5432/nightpass_dev
+
+   El resto de variables (Stripe, Supabase, JWT, etc.) las
+   pide el lider del proyecto. No las compartas por chat,
+   solo por un canal seguro.
+
+
+Paso 5 — Correr las migraciones de la base de datos
+
+   cd apps\api
+   copy .env.local .env
+   npx prisma migrate dev
+   cd ..\..
+
+   Esto crea las 10 tablas del sistema en tu base de datos
+   local. Si sale "Database schema is up to date" al final,
+   todo esta bien.
+
+
+Paso 6 — Arrancar el proyecto
+
+   pnpm dev
+
+   Esto levanta todo al mismo tiempo:
+   - Frontend en http://localhost:3000
+   - Backend  en http://localhost:3001
+   - Swagger  en http://localhost:3001/api/docs
+
+
+CONSIDERACIONES IMPORTANTES
+================================================================
+
+El archivo .env.local NUNCA se sube al repositorio.
+Ya esta en el .gitignore. Si lo subes accidentalmente, avisale
+al lider del proyecto de inmediato para rotar las credenciales.
+
+Cada vez que alguien del equipo cambie el schema de Prisma
+(agrega o modifica tablas), va a subir un archivo nuevo en
+apps/api/prisma/migrations/. Cuando hagas git pull y veas
+ese archivo nuevo, ejecuta:
+
+   cd apps\api
+   npx prisma migrate dev
+
+Esto actualiza tu base de datos local con los cambios.
+Si no haces esto, el backend va a fallar al arrancar.
+
+No borres ni modifiques los archivos de migraciones existentes.
+Son el historial de la base de datos y Prisma los necesita
+para saber en que estado esta cada entorno.
+
+
+FLUJO DE TRABAJO DIARIO
+================================================================
+
+La regla principal: NUNCA trabajes directo en la rama main.
+Main es produccion. Todo cambio pasa por una rama propia.
+
+1. Antes de empezar cualquier tarea, actualiza tu main local:
+
+      git checkout main
+      git pull
+
+2. Crea una rama nueva para la tarea que vas a trabajar.
+   Usa el formato: feature/e[numero]-descripcion-corta
+
+   Ejemplos:
+      git checkout -b feature/e2-auth-jwt
+      git checkout -b feature/e3-marketplace-api
+      git checkout -b feature/e3-marketplace-ui
+      git checkout -b fix/e2-refresh-token-bug
+
+3. Trabaja en tu rama. Commitea seguido con mensajes claros.
+   No esperes tener todo terminado para hacer el primer commit.
+
+   Formato de commits recomendado:
+      git commit -m "feat(e2): agregar endpoint POST /auth/register"
+      git commit -m "feat(e2): implementar JwtAuthGuard"
+      git commit -m "fix(e2): corregir validacion de email duplicado"
+      git commit -m "test(e2): agregar tests de registro y login"
+
+4. Cuando termines la tarea, sube tu rama:
+
+      git push origin feature/e2-auth-jwt
+
+5. Ve a GitHub y abre un Pull Request hacia main.
+   Describe brevemente que hiciste y como probarlo.
+
+6. Espera que el CI (GitHub Actions) pase en verde.
+   Si falla, revisa los logs y corrige antes de pedir review.
+
+7. Pide a un compañero que revise tu PR.
+   No mergees tu propio PR aunque tengas permisos.
+
+8. Una vez aprobado y mergeado, mueve el issue en el tablero
+   Kanban de "En Revision" a "Listo".
+
+9. Borra tu rama local y remota despues del merge:
+
+      git checkout main
+      git pull
+      git branch -d feature/e2-auth-jwt
+
+
+ORDEN DE LAS EPICAS Y TRABAJO EN PARALELO
+================================================================
+
+Las epicas tienen un orden porque unas dependen de otras.
+Sin embargo, el backend y el frontend de la misma epica
+SI pueden trabajarse en paralelo.
+
+Orden estricto (no se puede saltear):
+   E1 (base) -> E2 (auth) -> E3 (marketplace) -> E4 (pagos)
+   -> E5 (QR) -> E6 (scanner) -> E7 (panel B2B)
+
+E8 (notificaciones) y E9 (seguridad) van de la mano con
+todo el proceso — no son para el final.
+
+Como distribuir el trabajo en un equipo de 3:
+
+   Dev Backend:
+   E2 auth API -> E4 pagos API -> E5 QR API -> E6 scanner API
+
+   Dev Frontend:
+   E3 marketplace UI -> E4 checkout UI -> E5 QR pantalla -> E6 scanner UI
+
+   Dev Fullstack:
+   E2 con el backend -> E7 panel B2B -> E8 notificaciones -> E9 seguridad
+
+La clave: el dev de frontend puede trabajar con datos
+falsos (mock data) mientras el backend no este listo.
+Cuando el backend termina su endpoint, el frontend lo conecta.
+
+NO arranques E4 sin que E2 este en main.
+NO arranques E5 sin que E4 este en main.
+Las dependencias de datos son reales y vas a bloquear el
+trabajo si intentas saltarlas.
+
+
+DOCUMENTACION DISPONIBLE EN EL REPO
+================================================================
+
+docs/UML_NIGHTPASS.md
+   Arquitectura completa, diagramas de flujo, estructura de
+   base de datos (ERD), endpoints de la API, permisos por rol.
+   Leer esto antes de arrancar cualquier epica.
+
+apps/api/.env.example
+   Lista de todas las variables de entorno con descripcion.
+   Pide los valores reales al lider.
+
+apps/api/prisma/schema.prisma
+   Estructura de las 10 tablas de la base de datos.
+
+apps/api/src/app.controller.ts
+   Ejemplo de como se estructura un controller en NestJS.
+
+ESTRUCTURA_EXPLICADA.txt
+   Que hace cada archivo y carpeta del proyecto.
+
+El Swagger en localhost:3001/api/docs muestra todos los
+endpoints disponibles con sus parametros y respuestas.
+Es mas practico que Postman para probar la API.
+
+
+CUANDO ALGO FALLA
+================================================================
+
+"pnpm install falla con errores de dependencias"
+-> Borra la carpeta node_modules y el archivo pnpm-lock.yaml
+   y vuelve a correr pnpm install.
+
+"prisma migrate dev falla con error de conexion"
+-> Verifica que PostgreSQL este corriendo (abre pgAdmin).
+-> Verifica que DATABASE_URL en .env tenga la contrasena correcta.
+-> Verifica que la base de datos nightpass_dev existe en pgAdmin.
+
+"el backend no arranca"
+-> Verifica que el archivo apps/api/.env existe (no solo .env.local).
+-> Corre: cd apps\api && copy .env.local .env
+
+"el CI falla en GitHub"
+-> Lee los logs del Action en la pestana "Actions" del repo.
+-> El error mas comun es lint fallando — corrige los errores
+   de ESLint antes de hacer push.
+
+Si llevas mas de una hora bloqueado con algo:
+1. Escribe un comentario en el issue de GitHub explicando
+   que intentaste y donde te trabaste.
+2. Pon la etiqueta "bloqueado" en el issue.
+3. Avisa al equipo. No te quedes callado.
+
+
+================================================================
+  NightPass — Onboarding v1.0 — Marzo 2026
+================================================================

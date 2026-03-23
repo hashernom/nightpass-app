@@ -8,7 +8,6 @@ import { AppController } from './app.controller';
     // Variables de entorno disponibles en toda la app
     ConfigModule.forRoot({
       isGlobal: true,
-      envFilePath: '.env.local',
     }),
 
     // Rate limiting global
