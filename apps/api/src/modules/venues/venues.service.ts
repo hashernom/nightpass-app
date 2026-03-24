@@ -101,20 +101,10 @@ export class VenuesService {
 
   /**
    * Crea un nuevo venue (solo ADMIN_VENUE)
+   * Nota: La verificación de rol se hace en el RolesGuard del controlador
    */
   async create(createVenueDto: CreateVenueDto, userId: string) {
-    // Verificar que el usuario existe y tiene rol ADMIN_VENUE
-    const user = await this.prisma.user.findUnique({
-      where: { id: userId },
-      select: { role: true },
-    });
-
-    if (!user || user.role !== UserRole.ADMIN_VENUE) {
-      throw new ForbiddenException(
-        'Solo usuarios ADMIN_VENUE pueden crear venues',
-      );
-    }
-
+    // El guard ya valida que el usuario tiene rol ADMIN_VENUE
     return this.prisma.venue.create({
       data: {
         ...createVenueDto,

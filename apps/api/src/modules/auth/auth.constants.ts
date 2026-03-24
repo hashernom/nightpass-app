@@ -14,6 +14,7 @@ export const RATE_LIMIT_CONSTANTS = {
 } as const;
 
 export const COOKIE_CONSTANTS = {
+  ACCESS_TOKEN_NAME: 'access_token',
   REFRESH_TOKEN_NAME: 'refresh_token',
   HTTP_ONLY: true,
   SAME_SITE: 'strict' as const,

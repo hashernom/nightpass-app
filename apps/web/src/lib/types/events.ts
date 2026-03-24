@@ -6,7 +6,7 @@ export interface PromotionDto {
   name: string;
   description?: string;
   discountValue: number;
-  discountType: 'PERCENTAGE' | 'FIXED';
+  discountType: 'PERCENT' | 'FIXED';
   validUntil: Date;
   isActive: boolean;
 }

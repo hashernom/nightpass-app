@@ -58,8 +58,31 @@ export class AuthController {
     status: HttpStatus.BAD_REQUEST,
     description: 'Datos de registro inválidos',
   })
-  async register(@Body() registerDto: RegisterDto): Promise<TokensResponseDto> {
-    return this.authService.register(registerDto);
+  async register(
+    @Body() registerDto: RegisterDto,
+    @Res({ passthrough: true }) res: Response,
+  ): Promise<{ message: string }> {
+    const tokens = await this.authService.register(registerDto);
+
+    // Configurar cookie de access token
+    res.cookie(COOKIE_CONSTANTS.ACCESS_TOKEN_NAME, tokens.accessToken, {
+      httpOnly: COOKIE_CONSTANTS.HTTP_ONLY,
+      secure: COOKIE_CONSTANTS.SECURE,
+      sameSite: COOKIE_CONSTANTS.SAME_SITE,
+      path: COOKIE_CONSTANTS.PATH,
+      maxAge: 15 * 60 * 1000, // 15 minutos
+    });
+
+    // Configurar cookie de refresh token
+    res.cookie(COOKIE_CONSTANTS.REFRESH_TOKEN_NAME, tokens.refreshToken, {
+      httpOnly: COOKIE_CONSTANTS.HTTP_ONLY,
+      secure: COOKIE_CONSTANTS.SECURE,
+      sameSite: COOKIE_CONSTANTS.SAME_SITE,
+      path: COOKIE_CONSTANTS.PATH,
+      maxAge: 7 * 24 * 60 * 60 * 1000, // 7 días
+    });
+
+    return { message: 'Usuario registrado exitosamente' };
   }
 
   @Post('login')
@@ -82,9 +105,30 @@ export class AuthController {
   async login(
     @Body() loginDto: LoginDto,
     @Req() req: Request,
-  ): Promise<TokensResponseDto> {
+    @Res({ passthrough: true }) res: Response,
+  ): Promise<{ message: string }> {
     const ipAddress = req.ip;
-    return this.authService.login(loginDto, ipAddress);
+    const tokens = await this.authService.login(loginDto, ipAddress);
+
+    // Configurar cookie de access token
+    res.cookie(COOKIE_CONSTANTS.ACCESS_TOKEN_NAME, tokens.accessToken, {
+      httpOnly: COOKIE_CONSTANTS.HTTP_ONLY,
+      secure: COOKIE_CONSTANTS.SECURE,
+      sameSite: COOKIE_CONSTANTS.SAME_SITE,
+      path: COOKIE_CONSTANTS.PATH,
+      maxAge: 15 * 60 * 1000, // 15 minutos
+    });
+
+    // Configurar cookie de refresh token
+    res.cookie(COOKIE_CONSTANTS.REFRESH_TOKEN_NAME, tokens.refreshToken, {
+      httpOnly: COOKIE_CONSTANTS.HTTP_ONLY,
+      secure: COOKIE_CONSTANTS.SECURE,
+      sameSite: COOKIE_CONSTANTS.SAME_SITE,
+      path: COOKIE_CONSTANTS.PATH,
+      maxAge: 7 * 24 * 60 * 60 * 1000, // 7 días
+    });
+
+    return { message: 'Login exitoso' };
   }
 
   @Post('refresh')
@@ -104,17 +148,26 @@ export class AuthController {
   async refreshToken(
     @Req() req: Request,
     @Res({ passthrough: true }) res: Response,
-  ): Promise<TokensResponseDto> {
+  ): Promise<{ message: string }> {
     const refreshToken = req.cookies?.[COOKIE_CONSTANTS.REFRESH_TOKEN_NAME];
 
     if (!refreshToken) {
-      throw new Error('Refresh token no encontrado en cookies');
+      throw new UnauthorizedException('Refresh token no encontrado en cookies');
     }
 
     const tokens = await this.authService.refreshToken(refreshToken);
 
-    // Configurar cookie de refresh token
-    res.cookie(COOKIE_CONSTANTS.REFRESH_TOKEN_NAME, refreshToken, {
+    // Configurar cookie de access token
+    res.cookie(COOKIE_CONSTANTS.ACCESS_TOKEN_NAME, tokens.accessToken, {
+      httpOnly: COOKIE_CONSTANTS.HTTP_ONLY,
+      secure: COOKIE_CONSTANTS.SECURE,
+      sameSite: COOKIE_CONSTANTS.SAME_SITE,
+      path: COOKIE_CONSTANTS.PATH,
+      maxAge: 15 * 60 * 1000, // 15 minutos
+    });
+
+    // Configurar cookie de refresh token (renovar)
+    res.cookie(COOKIE_CONSTANTS.REFRESH_TOKEN_NAME, tokens.refreshToken, {
       httpOnly: COOKIE_CONSTANTS.HTTP_ONLY,
       secure: COOKIE_CONSTANTS.SECURE,
       sameSite: COOKIE_CONSTANTS.SAME_SITE,
@@ -122,7 +175,7 @@ export class AuthController {
       maxAge: 7 * 24 * 60 * 60 * 1000, // 7 días
     });
 
-    return tokens;
+    return { message: 'Token refrescado exitosamente' };
   }
 
   @Post('logout')
@@ -137,6 +190,14 @@ export class AuthController {
   async logout(
     @Res({ passthrough: true }) res: Response,
   ): Promise<{ message: string }> {
+    // Limpiar cookie de access token
+    res.clearCookie(COOKIE_CONSTANTS.ACCESS_TOKEN_NAME, {
+      httpOnly: COOKIE_CONSTANTS.HTTP_ONLY,
+      secure: COOKIE_CONSTANTS.SECURE,
+      sameSite: COOKIE_CONSTANTS.SAME_SITE,
+      path: COOKIE_CONSTANTS.PATH,
+    });
+
     // Limpiar cookie de refresh token
     res.clearCookie(COOKIE_CONSTANTS.REFRESH_TOKEN_NAME, {
       httpOnly: COOKIE_CONSTANTS.HTTP_ONLY,
@@ -186,12 +247,7 @@ export class AuthController {
     const tokens = await this.authService.generateTokens(user);
 
     // Configurar cookie de refresh token
-    const refreshToken = await this.authService['jwtService'].signAsync(
-      { sub: user.id },
-      {
-        expiresIn: JWT_CONSTANTS.REFRESH_TOKEN_EXPIRES_IN,
-      },
-    );
+    const refreshToken = await this.authService.generateRefreshToken(user);
 
     res.cookie(COOKIE_CONSTANTS.REFRESH_TOKEN_NAME, refreshToken, {
       httpOnly: COOKIE_CONSTANTS.HTTP_ONLY,

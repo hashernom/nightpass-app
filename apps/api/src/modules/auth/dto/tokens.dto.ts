@@ -8,6 +8,12 @@ export class TokensResponseDto {
   accessToken!: string;
 
   @ApiProperty({
+    description: 'Refresh token JWT (para uso en cookies HttpOnly)',
+    example: 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9...',
+  })
+  refreshToken!: string;
+
+  @ApiProperty({
     description: 'Tiempo de expiración del access token en segundos',
     example: 900,
   })

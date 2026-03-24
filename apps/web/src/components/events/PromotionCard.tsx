@@ -7,7 +7,7 @@ interface PromotionCardProps {
 
 export default function PromotionCard({ promotion }: PromotionCardProps) {
   const discountText =
-    promotion.discountType === 'PERCENTAGE'
+    promotion.discountType === 'PERCENT'
       ? `${promotion.discountValue}% OFF`
       : `$${promotion.discountValue} OFF`;
 
@@ -37,7 +37,7 @@ export default function PromotionCard({ promotion }: PromotionCardProps) {
             {discountText}
           </div>
           <div className="text-xs text-gray-400 mt-1">
-            {promotion.discountType === 'PERCENTAGE'
+            {promotion.discountType === 'PERCENT'
               ? 'Descuento'
               : 'Descuento fijo'}
           </div>

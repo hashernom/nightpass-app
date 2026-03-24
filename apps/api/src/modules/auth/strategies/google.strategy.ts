@@ -37,13 +37,13 @@ export class GoogleStrategy extends PassportStrategy(Strategy, 'google') {
       }
 
       // Buscar usuario existente por email
-      let user = await this.authService['prisma'].user.findUnique({
+      let user = await this.authService.getPrisma().user.findUnique({
         where: { email },
       });
 
       if (!user) {
         // Crear nuevo usuario si no existe
-        user = await this.authService['prisma'].user.create({
+        user = await this.authService.getPrisma().user.create({
           data: {
             email,
             name: displayName || email.split('@')[0],
@@ -55,7 +55,7 @@ export class GoogleStrategy extends PassportStrategy(Strategy, 'google') {
         });
       } else if (user.provider !== AuthProvider.GOOGLE) {
         // Si el usuario existe pero con otro provider, actualizar
-        user = await this.authService['prisma'].user.update({
+        user = await this.authService.getPrisma().user.update({
           where: { id: user.id },
           data: {
             provider: AuthProvider.GOOGLE,

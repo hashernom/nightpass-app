@@ -8,18 +8,6 @@ export const api = axios.create({
   },
 });
 
-// Interceptor: adjunta el access token en cada request
-api.interceptors.request.use((config) => {
-  const token =
-    typeof window !== 'undefined'
-      ? localStorage.getItem('accessToken')
-      : null;
-  if (token) {
-    config.headers.Authorization = `Bearer ${token}`;
-  }
-  return config;
-});
-
 // Interceptor: maneja token expirado (401) intentando refresh
 api.interceptors.response.use(
   (response) => response,
@@ -28,12 +16,12 @@ api.interceptors.response.use(
     if (error.response?.status === 401 && !original._retry) {
       original._retry = true;
       try {
-        const { data } = await api.post('/auth/refresh');
-        localStorage.setItem('accessToken', data.accessToken);
-        original.headers.Authorization = `Bearer ${data.accessToken}`;
+        // El refresh token está en cookies HttpOnly, el backend lo leerá automáticamente
+        await api.post('/auth/refresh');
+        // El backend configurará nuevos cookies automáticamente
         return api(original);
       } catch {
-        localStorage.removeItem('accessToken');
+        // Si el refresh falla, redirigir al login
         window.location.href = '/login';
       }
     }

@@ -3,6 +3,8 @@ import { ValidationPipe } from '@nestjs/common';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { AppModule } from './app.module';
 import helmet from 'helmet';
+import { HttpExceptionFilter } from './shared/filters/http-exception.filter';
+import { DecimalInterceptor } from './shared/interceptors/decimal.interceptor';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -27,6 +29,12 @@ async function bootstrap() {
       transform: true,
     }),
   );
+
+  // Filtro global de excepciones HTTP
+  app.useGlobalFilters(new HttpExceptionFilter());
+
+  // Interceptor global para transformar campos Decimal de Prisma a números
+  app.useGlobalInterceptors(new DecimalInterceptor());
 
   // Swagger — solo en desarrollo
   if (process.env.NODE_ENV !== 'production') {

@@ -126,6 +126,7 @@ export class AuthService {
 
     return {
       accessToken,
+      refreshToken,
       expiresIn: 15 * 60, // 15 minutos en segundos
       tokenType: 'Bearer',
       user: {
@@ -168,11 +169,16 @@ export class AuthService {
     ipAddress: string,
     success: boolean,
   ): Promise<void> {
-    // En una implementación real, esto se almacenaría en Redis o base de datos
-    // Por ahora solo registramos en consola
+    // Log estructurado para auditoría (en producción se enviaría a un sistema de logging)
+    const timestamp = new Date().toISOString();
+    const status = success ? 'SUCCESS' : 'FAILURE';
+
     console.log(
-      `Login attempt: userId=${userId}, ip=${ipAddress}, success=${success}`,
+      `[LOGIN_ATTEMPT] ${timestamp} - User: ${userId}, IP: ${ipAddress}, Status: ${status}`,
     );
+
+    // El rate limiting real lo maneja ThrottlerModule a nivel global
+    // No hay tabla de login_attempt en el esquema actual, por lo que solo registramos en logs
   }
 
   /**
@@ -233,5 +239,24 @@ export class AuthService {
     });
 
     return user;
+  }
+
+  /**
+   * Genera solo el refresh token (para uso interno en estrategias OAuth)
+   */
+  async generateRefreshToken(user: User): Promise<string> {
+    return this.jwtService.signAsync(
+      { sub: user.id },
+      {
+        expiresIn: JWT_CONSTANTS.REFRESH_TOKEN_EXPIRES_IN,
+      },
+    );
+  }
+
+  /**
+   * Obtiene el servicio Prisma (para uso interno en estrategias OAuth)
+   */
+  getPrisma(): PrismaService {
+    return this.prisma;
   }
 }

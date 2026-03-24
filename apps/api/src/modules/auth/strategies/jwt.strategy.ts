@@ -3,12 +3,28 @@ import { PassportStrategy } from '@nestjs/passport';
 import { ExtractJwt, Strategy } from 'passport-jwt';
 import { AuthService, JwtPayload } from '../auth.service';
 import { User } from '@prisma/client';
+import { Request } from 'express';
+import { COOKIE_CONSTANTS } from '../auth.constants';
 
 @Injectable()
 export class JwtStrategy extends PassportStrategy(Strategy) {
   constructor(private readonly authService: AuthService) {
     super({
-      jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
+      jwtFromRequest: (req: Request) => {
+        // 1. Intentar obtener el token del header Authorization
+        const authHeader = ExtractJwt.fromAuthHeaderAsBearerToken()(req);
+        if (authHeader) {
+          return authHeader;
+        }
+
+        // 2. Intentar obtener el token de la cookie
+        const cookieToken = req.cookies?.[COOKIE_CONSTANTS.ACCESS_TOKEN_NAME];
+        if (cookieToken) {
+          return cookieToken;
+        }
+
+        return null;
+      },
       ignoreExpiration: false,
       secretOrKeyProvider: (
         request: any,
