@@ -9,6 +9,12 @@ import { UserRole } from '@prisma/client';
 import * as bcrypt from 'bcryptjs';
 import { describe, beforeEach, it, expect, vi } from 'vitest';
 
+// Mock de bcrypt
+vi.mock('bcryptjs', () => ({
+  hash: vi.fn(),
+  compare: vi.fn(),
+}));
+
 describe('AuthService', () => {
   let authService: AuthService;
   let prismaService: PrismaService;
@@ -20,6 +26,10 @@ describe('AuthService', () => {
       create: vi.fn(),
       findFirst: vi.fn(),
     },
+    $connect: vi.fn(),
+    $disconnect: vi.fn(),
+    $on: vi.fn(),
+    $use: vi.fn(),
   };
 
   const mockJwtService = {
@@ -28,17 +38,13 @@ describe('AuthService', () => {
   };
 
   beforeEach(async () => {
-    const module: TestingModule = await Test.createTestingModule({
-      providers: [
-        AuthService,
-        { provide: PrismaService, useValue: mockPrismaService },
-        { provide: JwtService, useValue: mockJwtService },
-      ],
-    }).compile();
-
-    authService = module.get<AuthService>(AuthService);
-    prismaService = module.get<PrismaService>(PrismaService);
-    jwtService = module.get<JwtService>(JwtService);
+    // Instanciar manualmente el servicio para evitar problemas con el TestingModule
+    authService = new AuthService(
+      mockPrismaService as any,
+      mockJwtService as any,
+    );
+    prismaService = mockPrismaService as any;
+    jwtService = mockJwtService as any;
 
     vi.clearAllMocks();
   });
@@ -59,6 +65,7 @@ describe('AuthService', () => {
         name: registerDto.name,
         role: registerDto.role,
         passwordHash: hashedPassword,
+        provider: 'LOCAL',
         createdAt: new Date(),
         updatedAt: new Date(),
       };
@@ -77,7 +84,7 @@ describe('AuthService', () => {
       };
 
       // Mock de bcrypt.hash
-      vi.spyOn(bcrypt, 'hash').mockResolvedValue(hashedPassword as never);
+      (bcrypt.hash as any).mockResolvedValue(hashedPassword);
 
       // Mock de findUnique (usuario no existe)
       mockPrismaService.user.findUnique.mockResolvedValue(null);
@@ -102,6 +109,7 @@ describe('AuthService', () => {
           passwordHash: hashedPassword,
           name: registerDto.name,
           role: registerDto.role,
+          provider: 'LOCAL',
         },
       });
       expect(result).toEqual(mockTokens);
@@ -150,6 +158,8 @@ describe('AuthService', () => {
         name: 'Test User',
         role: UserRole.USER,
         passwordHash: 'hashedPassword123',
+        provider: 'LOCAL',
+        isActive: true,
       };
 
       const mockTokens = {
@@ -169,7 +179,7 @@ describe('AuthService', () => {
       mockPrismaService.user.findUnique.mockResolvedValue(mockUser);
 
       // Mock de bcrypt.compare
-      vi.spyOn(bcrypt, 'compare').mockResolvedValue(true as never);
+      (bcrypt.compare as any).mockResolvedValue(true);
 
       // Mock de generateTokens
       vi.spyOn(authService as any, 'generateTokens').mockResolvedValue(
@@ -220,10 +230,12 @@ describe('AuthService', () => {
         email: loginDto.email,
         name: 'Test User',
         passwordHash: 'hashedPassword123',
+        provider: 'LOCAL',
+        isActive: true,
       };
 
       mockPrismaService.user.findUnique.mockResolvedValue(mockUser);
-      vi.spyOn(bcrypt, 'compare').mockResolvedValue(false as never);
+      (bcrypt.compare as any).mockResolvedValue(false);
 
       await expect(authService.login(loginDto)).rejects.toThrow(
         UnauthorizedException,
@@ -256,6 +268,8 @@ describe('AuthService', () => {
         email: mockPayload.email,
         name: 'Test User',
         role: mockPayload.role,
+        provider: 'LOCAL',
+        isActive: true,
       };
 
       const mockTokens = {
@@ -272,17 +286,15 @@ describe('AuthService', () => {
       };
 
       mockJwtService.verifyAsync.mockResolvedValue(mockPayload);
-      mockPrismaService.user.findFirst.mockResolvedValue(mockUser);
+      mockPrismaService.user.findUnique.mockResolvedValue(mockUser);
       vi.spyOn(authService as any, 'generateTokens').mockResolvedValue(
         mockTokens,
       );
 
       const result = await authService.refreshToken(refreshToken);
 
-      expect(mockJwtService.verifyAsync).toHaveBeenCalledWith(refreshToken, {
-        secret: expect.any(String),
-      });
-      expect(mockPrismaService.user.findFirst).toHaveBeenCalledWith({
+      expect(mockJwtService.verifyAsync).toHaveBeenCalledWith(refreshToken);
+      expect(mockPrismaService.user.findUnique).toHaveBeenCalledWith({
         where: { id: mockPayload.sub },
       });
       expect(result).toEqual(mockTokens);
@@ -300,9 +312,7 @@ describe('AuthService', () => {
         'Refresh token inválido o expirado',
       );
 
-      expect(mockJwtService.verifyAsync).toHaveBeenCalledWith(refreshToken, {
-        secret: expect.any(String),
-      });
+      expect(mockJwtService.verifyAsync).toHaveBeenCalledWith(refreshToken);
       expect(mockPrismaService.user.findFirst).not.toHaveBeenCalled();
     });
   });

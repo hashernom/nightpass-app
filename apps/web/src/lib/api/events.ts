@@ -13,6 +13,32 @@ export interface EventFilters {
   limit?: number;
 }
 
+export interface CreateEventData {
+  name: string;
+  description?: string;
+  date: string;
+  doorsOpen: string;
+  coverPrice: number;
+  capacity: number;
+  venueId: string;
+  musicGenre?: string;
+  bannerImageUrl?: string;
+  termsAndConditions?: string;
+}
+
+export interface UpdateEventData {
+  name?: string;
+  description?: string;
+  date?: string;
+  doorsOpen?: string;
+  coverPrice?: number;
+  capacity?: number;
+  venueId?: string;
+  musicGenre?: string;
+  bannerImageUrl?: string;
+  termsAndConditions?: string;
+}
+
 export async function fetchEvents(
   filters: EventFilters,
 ): Promise<PaginatedResponse<EventDto>> {
@@ -35,7 +61,10 @@ export async function fetchEventById(id: string): Promise<EventDto> {
   return response.data;
 }
 
-export async function createEvent(data: any, token: string): Promise<EventDto> {
+export async function createEvent(
+  data: CreateEventData,
+  token: string,
+): Promise<EventDto> {
   const response = await axios.post(`${API_BASE}/events`, data, {
     headers: { Authorization: `Bearer ${token}` },
   });
@@ -44,7 +73,7 @@ export async function createEvent(data: any, token: string): Promise<EventDto> {
 
 export async function updateEvent(
   id: string,
-  data: any,
+  data: UpdateEventData,
   token: string,
 ): Promise<EventDto> {
   const response = await axios.patch(`${API_BASE}/events/${id}`, data, {

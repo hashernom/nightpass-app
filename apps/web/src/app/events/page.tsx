@@ -3,7 +3,6 @@ import {
   fetchEventsServer,
   EventFilters as FiltersType,
 } from '@/lib/api/events';
-import { EventDto } from '@nightpass/types';
 import EventsClient from './EventsClient';
 
 interface EventsPageProps {

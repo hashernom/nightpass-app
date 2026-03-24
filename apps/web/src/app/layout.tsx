@@ -1,11 +1,10 @@
-import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import { Providers } from './providers';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'NightPass — Tu entrada a la noche',
   description: 'Compra covers y tickets para los mejores eventos de tu ciudad.',
 };
