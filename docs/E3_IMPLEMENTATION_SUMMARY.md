@@ -32,6 +32,10 @@
 - Inclusión de relaciones (venues → eventos próximos, eventos → promociones activas)
 - Manejo de errores con respuestas HTTP apropiadas (404, 403, 400)
 - Integración completa con el sistema de autenticación existente (JWT, roles)
+- **Validación cruzada de fechas**: Garantiza que `doorsOpen` sea anterior a la fecha del evento mediante validador personalizado
+- **Rate limiting**: Protección contra ataques de fuerza bruta con límites configurables por endpoint
+- **Server Components**: Arquitectura moderna de Next.js 15 con separación clara entre data fetching e interactividad
+- **ISR (Incremental Static Regeneration)**: Revalidación automática de datos cada 60 segundos
 
 ## Frontend (Next.js Marketplace)
 
@@ -112,6 +116,34 @@
 - Integración real con Supabase Realtime (actualmente mockeado)
 - Actualización de tipos compartidos para incluir relaciones completas
 
+### Mejoras Recientes Implementadas
+
+#### Infraestructura y Entorno
+
+- **Node.js LTS**: Estándarización a versión 20.18.0 mediante archivo `.nvmrc`
+- **Configuración de build**: Optimización de NestJS con `deleteOutDir: true` para limpieza de archivos stale
+- **Turborepo**: Delegación de caché de compilación para builds más rápidos
+
+#### Seguridad y Validación Backend
+
+- **Validación cruzada de fechas**: Implementación de validador personalizado `IsBefore` que garantiza que `doorsOpen` sea anterior a la fecha del evento
+- **Rate limiting**: Protección contra ataques de fuerza bruta con límite de 10 solicitudes/minuto para endpoints de autenticación
+- **Configuración de throttlers**: Dos niveles de rate limiting (global: 100/min, auth: 10/min) usando `@nestjs/throttler`
+
+#### Arquitectura Frontend (Next.js 15)
+
+- **Server Components**: Migración completa de la página `/events` a Server Components para mejor rendimiento y SEO
+- **ISR (Incremental Static Regeneration)**: Revalidación automática cada 60 segundos para datos de eventos
+- **Arquitectura híbrida**: Separación clara entre Server Components (data fetching) y Client Components (interactividad)
+- **Manejo de search params**: Filtros persistentes en URL con soporte para Server Components async
+
+#### Características Técnicas Adicionales
+
+- **Validadores personalizados**: Creación de decoradores `@IsBefore` y `@IsAfter` reutilizables
+- **Configuración modular**: Rate limiting específico por endpoint con decoradores `@Throttle`
+- **Suspense boundaries**: Manejo de estados de carga con React Suspense
+- **TypeScript**: Tipado estricto en todas las implementaciones
+
 ### Próximos Pasos Recomendados
 
 1. Configurar alias de TypeScript en el frontend
@@ -119,5 +151,7 @@
 3. Agregar pruebas unitarias y de integración
 4. Implementar analytics para tracking de uso
 5. Optimizar imágenes con next/image
+6. Expandir rate limiting a otros endpoints críticos
+7. Implementar logging estructurado para auditoría de seguridad
 
-La implementación cumple con todos los criterios de aceptación del E3: marketplace muestra solo eventos PUBLISHED, admin gestiona sus propios venues y eventos, filtros funcionan sin recarga de página, y la UI carga en menos de 2 segundos.
+La implementación cumple con todos los criterios de aceptación del E3: marketplace muestra solo eventos PUBLISHED, admin gestiona sus propios venues y eventos, filtros funcionan sin recarga de página, y la UI carga en menos de 2 segundos. Las mejoras recientes han fortalecido la seguridad, escalabilidad y rendimiento de la aplicación.
