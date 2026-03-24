@@ -10,7 +10,7 @@ import {
   Max,
 } from 'class-validator';
 import { Transform } from 'class-transformer';
-import { EventStatus } from '@prisma/client';
+import { EventStatus } from '../../../shared/enums';
 import { IsBefore } from '../../../shared/validators/is-before.validator';
 
 export class CreateEventDto {

@@ -9,7 +9,7 @@ import {
   Min,
 } from 'class-validator';
 import { Transform } from 'class-transformer';
-import { EventStatus } from '@prisma/client';
+import { EventStatus } from '../../../shared/enums';
 import { PartialType } from '@nestjs/swagger';
 import { CreateEventDto } from './create-event.dto';
 

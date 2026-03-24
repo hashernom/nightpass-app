@@ -4,7 +4,7 @@ import { PrismaService } from '../../../shared/prisma/prisma.service';
 import { EventsService } from '../events.service';
 import { CreateEventDto } from '../dto/create-event.dto';
 import { UpdateEventDto } from '../dto/update-event.dto';
-import { EventStatus, UserRole } from '@prisma/client';
+import { EventStatus, UserRole } from '../../../shared/enums';
 import { describe, beforeEach, it, expect, vi } from 'vitest';
 
 describe('EventsService', () => {

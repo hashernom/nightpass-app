@@ -10,7 +10,8 @@ import { RegisterDto } from './dto/register.dto';
 import { LoginDto } from './dto/login.dto';
 import { TokensResponseDto } from './dto/tokens.dto';
 import * as bcrypt from 'bcryptjs';
-import { User, UserRole } from '@prisma/client';
+import { User } from '@prisma/client';
+import { UserRole } from '../../shared/enums';
 import { JWT_CONSTANTS, COOKIE_CONSTANTS } from './auth.constants';
 
 export interface JwtPayload {
@@ -110,7 +111,7 @@ export class AuthService {
     const payload: JwtPayload = {
       sub: user.id,
       email: user.email,
-      role: user.role,
+      role: user.role as UserRole,
     };
 
     const accessToken = await this.jwtService.signAsync(payload, {

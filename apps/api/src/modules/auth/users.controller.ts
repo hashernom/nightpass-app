@@ -19,7 +19,7 @@ import { AuthService } from './auth.service';
 import { JwtAuthGuard } from './guards/jwt-auth.guard';
 import { RolesGuard } from './guards/roles.guard';
 import { Roles } from './decorators/roles.decorator';
-import { UserRole } from '@prisma/client';
+import { UserRole } from '../../shared/enums';
 
 @ApiTags('users')
 @Controller('users')

@@ -7,7 +7,7 @@ import {
   IsString,
   MinLength,
 } from 'class-validator';
-import { UserRole } from '@prisma/client';
+import { UserRole } from '../../../shared/enums';
 
 export class RegisterDto {
   @ApiProperty({

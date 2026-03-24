@@ -13,7 +13,9 @@
     },
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "incremental": false
+    "incremental": false,
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist", "test"]

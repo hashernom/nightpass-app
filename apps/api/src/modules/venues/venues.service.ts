@@ -8,7 +8,7 @@ import { PrismaService } from '../../shared/prisma/prisma.service';
 import { CreateVenueDto } from './dto/create-venue.dto';
 import { UpdateVenueDto } from './dto/update-venue.dto';
 import { VenueQueryDto } from './dto/venue-query.dto';
-import { UserRole } from '@prisma/client';
+import { UserRole } from '../../shared/enums';
 
 @Injectable()
 export class VenuesService {

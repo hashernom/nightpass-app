@@ -8,7 +8,7 @@ import { PrismaService } from '../../shared/prisma/prisma.service';
 import { CreateEventDto } from './dto/create-event.dto';
 import { UpdateEventDto } from './dto/update-event.dto';
 import { EventQueryDto } from './dto/event-query.dto';
-import { UserRole, EventStatus } from '@prisma/client';
+import { UserRole, EventStatus } from '../../shared/enums';
 
 @Injectable()
 export class EventsService {
