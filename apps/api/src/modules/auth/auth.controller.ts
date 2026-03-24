@@ -30,7 +30,7 @@ import { ThrottlerGuard, Throttle } from '@nestjs/throttler';
 import { JwtAuthGuard } from './guards/jwt-auth.guard';
 import { RolesGuard } from './guards/roles.guard';
 import { Roles } from './decorators/roles.decorator';
-import { UserRole } from '@prisma/client';
+import { UserRole } from '@nightpass/types';
 import { Request, Response } from 'express';
 import { COOKIE_CONSTANTS, JWT_CONSTANTS } from './auth.constants';
 

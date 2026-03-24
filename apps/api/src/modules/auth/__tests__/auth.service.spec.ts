@@ -5,7 +5,7 @@ import { PrismaService } from '../../../shared/prisma/prisma.service';
 import { AuthService } from '../auth.service';
 import { RegisterDto } from '../dto/register.dto';
 import { LoginDto } from '../dto/login.dto';
-import { UserRole } from '@prisma/client';
+import { UserRole } from '@nightpass/types';
 import * as bcrypt from 'bcryptjs';
 import { describe, beforeEach, it, expect, vi } from 'vitest';
 
