@@ -90,7 +90,17 @@ Paso 5 — Correr las migraciones de la base de datos
    todo esta bien.
 
 
-Paso 6 — Arrancar el proyecto
+Paso 6 — Generar tipos TypeScript de Prisma (CRÍTICO)
+
+   pnpm --filter @nightpass/api run prisma:generate
+
+   **IMPORTANTE**: Este paso es obligatorio antes de ejecutar
+   cualquier comando de TypeScript (type-check, lint, etc.).
+   Sin él, TypeScript mostrará errores como:
+   "Module '@prisma/client' has no exported member 'User'".
+
+
+Paso 7 — Arrancar el proyecto
 
    pnpm dev
 

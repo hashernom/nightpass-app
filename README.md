@@ -155,7 +155,15 @@ cd ../..
 pnpm --filter api prisma migrate dev
 ```
 
-#### 7. Iniciar la aplicación
+#### 7. Generar tipos TypeScript de Prisma (CRÍTICO)
+
+```bash
+pnpm --filter @nightpass/api run prisma:generate
+```
+
+**Nota**: Este paso es obligatorio antes de ejecutar `pnpm type-check` o `pnpm lint`. Sin él, TypeScript mostrará errores como "Module '@prisma/client' has no exported member 'User'".
+
+#### 8. Iniciar la aplicación
 
 ```bash
 pnpm dev
@@ -264,11 +272,11 @@ pnpm test:cov
 
 ### Pipeline CI/CD
 
-1. **Lint** - ESLint y Prettier
-2. **Type checking** - TypeScript compilation
+1. **Lint** - ESLint (web usa ESLint nativo, API permite warnings)
+2. **Type checking** - TypeScript compilation (requiere `prisma:generate` previo)
 3. **Tests** - Unitarios y E2E
 4. **Build** - Next.js y NestJS
-5. **Security audit** - npm audit
+5. **Security audit** - `pnpm audit --audit-level=critical`
 6. **Deploy** - Vercel (frontend) + Railway (backend)
 
 ## Documentación Adicional

@@ -221,6 +221,30 @@ a mano. Si se daña, se puede perder el historial del proyecto.
   packages/config/    -> Configuracion de ESLint y TS compartida
 
 
+════════════════════════════════════════════════════════════════
+  DEUDA TECNICA — MEJORAS PENDIENTES
+════════════════════════════════════════════════════════════════
+
+TODO.md
+-------
+Documento que registra las mejoras pendientes y deuda tecnica del
+proyecto. Incluye:
+
+1. **80 warnings de ESLint en API**: Actualmente ignorados para que
+  el CI pase, pero deben limpiarse para reactivar --max-warnings 0.
+  Incluyen @typescript-eslint/no-explicit-any y variables sin usar.
+
+2. **Configuracion ESLint unificada**: El frontend y backend usan
+  configuraciones diferentes. Idealmente deberian compartir una
+  configuracion central en packages/config/.
+
+3. **Generacion de tipos Prisma**: Paso critico que debe ejecutarse
+  despues de pnpm install y antes de pnpm type-check. Documentado
+  en README.md y ONBOARDING.txt.
+
+Para mas detalles, ver el archivo TODO.md completo.
+
+
 ================================================================
   NightPass — Documentacion de estructura v1.0 — Marzo 2026
 ================================================================
