@@ -10,3 +10,9 @@ dist
 coverage
 run.ps1
 pg_setup.ps1
+
+# TypeScript build info
+*.tsbuildinfo
+
+# Prisma generated
+apps/api/prisma/generated/
