@@ -1,15 +1,4 @@
-import { ApiProperty } from '@nestjs/swagger';
-import {
-  IsString,
-  IsInt,
-  IsOptional,
-  IsDecimal,
-  IsDateString,
-  IsEnum,
-  Min,
-} from 'class-validator';
-import { Transform } from 'class-transformer';
-import { EventStatus } from '../../../shared/enums';
+import { IsInt, IsOptional, Min } from 'class-validator';
 import { PartialType } from '@nestjs/swagger';
 import { CreateEventDto } from './create-event.dto';
 

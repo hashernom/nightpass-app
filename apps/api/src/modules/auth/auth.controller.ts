@@ -233,6 +233,7 @@ export class AuthController {
     description: 'Autenticación con Google fallida',
   })
   async googleAuthCallback(
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any -- TODO: tipar en E4
     @Req() req: any,
     @Res({ passthrough: true }) res: Response,
   ): Promise<TokensResponseDto> {

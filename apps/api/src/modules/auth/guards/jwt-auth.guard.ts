@@ -22,6 +22,7 @@ export class JwtAuthGuard extends AuthGuard('jwt') {
     return super.canActivate(context);
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- TODO: tipar en E4
   handleRequest(err: any, user: any, info: any) {
     // Puedes personalizar el manejo de errores aquí
     if (err || !user) {

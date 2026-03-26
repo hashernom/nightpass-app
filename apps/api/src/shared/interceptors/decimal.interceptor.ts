@@ -13,14 +13,14 @@ import { map } from 'rxjs/operators';
  */
 @Injectable()
 export class DecimalInterceptor implements NestInterceptor {
-  intercept(context: ExecutionContext, next: CallHandler): Observable<any> {
+  intercept(context: ExecutionContext, next: CallHandler): Observable<unknown> {
     return next.handle().pipe(map((data) => this.transformDecimals(data)));
   }
 
   /**
    * Transforma recursivamente objetos Decimal a números.
    */
-  private transformDecimals(data: any): any {
+  private transformDecimals(data: unknown): unknown {
     if (data === null || data === undefined) {
       return data;
     }
@@ -38,10 +38,12 @@ export class DecimalInterceptor implements NestInterceptor {
       }
 
       // Si es un objeto regular, transformar cada propiedad
-      const transformed: any = {};
+      const transformed: Record<string, unknown> = {};
       for (const key in data) {
         if (Object.prototype.hasOwnProperty.call(data, key)) {
-          transformed[key] = this.transformDecimals(data[key]);
+          transformed[key] = this.transformDecimals(
+            (data as Record<string, unknown>)[key],
+          );
         }
       }
       return transformed;
@@ -55,13 +57,13 @@ export class DecimalInterceptor implements NestInterceptor {
    * Verifica si un objeto es un Decimal de Prisma.
    * Los objetos Decimal de Prisma tienen métodos específicos.
    */
-  private isPrismaDecimal(obj: any): boolean {
+  private isPrismaDecimal(obj: unknown): boolean {
     return (
       typeof obj === 'object' &&
       obj !== null &&
-      typeof obj.toString === 'function' &&
-      typeof obj.toNumber === 'function' &&
-      typeof obj.toFixed === 'function' &&
+      typeof (obj as { toString?: unknown }).toString === 'function' &&
+      typeof (obj as { toNumber?: unknown }).toNumber === 'function' &&
+      typeof (obj as { toFixed?: unknown }).toFixed === 'function' &&
       !Array.isArray(obj)
     );
   }

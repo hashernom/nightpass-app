@@ -1,4 +1,3 @@
-import { Test, TestingModule } from '@nestjs/testing';
 import { ConflictException, UnauthorizedException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { PrismaService } from '../../../shared/prisma/prisma.service';
@@ -17,8 +16,6 @@ vi.mock('bcryptjs', () => ({
 
 describe('AuthService', () => {
   let authService: AuthService;
-  let prismaService: PrismaService;
-  let jwtService: JwtService;
 
   const mockPrismaService = {
     user: {
@@ -40,11 +37,9 @@ describe('AuthService', () => {
   beforeEach(async () => {
     // Instanciar manualmente el servicio para evitar problemas con el TestingModule
     authService = new AuthService(
-      mockPrismaService as any,
-      mockJwtService as any,
+      mockPrismaService as unknown as PrismaService,
+      mockJwtService as unknown as JwtService,
     );
-    prismaService = mockPrismaService as any;
-    jwtService = mockJwtService as any;
 
     vi.clearAllMocks();
   });
@@ -63,7 +58,7 @@ describe('AuthService', () => {
         id: 'user-id-123',
         email: registerDto.email,
         name: registerDto.name,
-        role: registerDto.role,
+        role: registerDto.role ?? UserRole.USER,
         passwordHash: hashedPassword,
         provider: 'LOCAL',
         createdAt: new Date(),
@@ -84,6 +79,7 @@ describe('AuthService', () => {
       };
 
       // Mock de bcrypt.hash
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (bcrypt.hash as any).mockResolvedValue(hashedPassword);
 
       // Mock de findUnique (usuario no existe)
@@ -93,9 +89,7 @@ describe('AuthService', () => {
       mockPrismaService.user.create.mockResolvedValue(mockUser);
 
       // Mock de generateTokens
-      vi.spyOn(authService as any, 'generateTokens').mockResolvedValue(
-        mockTokens,
-      );
+      vi.spyOn(authService, 'generateTokens').mockResolvedValue(mockTokens);
 
       const result = await authService.register(registerDto);
 
@@ -171,7 +165,7 @@ describe('AuthService', () => {
           id: mockUser.id,
           email: mockUser.email,
           name: mockUser.name,
-          role: mockUser.role,
+          role: mockUser.role as string,
         },
       };
 
@@ -179,12 +173,11 @@ describe('AuthService', () => {
       mockPrismaService.user.findUnique.mockResolvedValue(mockUser);
 
       // Mock de bcrypt.compare
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (bcrypt.compare as any).mockResolvedValue(true);
 
       // Mock de generateTokens
-      vi.spyOn(authService as any, 'generateTokens').mockResolvedValue(
-        mockTokens,
-      );
+      vi.spyOn(authService, 'generateTokens').mockResolvedValue(mockTokens);
 
       const result = await authService.login(loginDto);
 
@@ -235,6 +228,7 @@ describe('AuthService', () => {
       };
 
       mockPrismaService.user.findUnique.mockResolvedValue(mockUser);
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (bcrypt.compare as any).mockResolvedValue(false);
 
       await expect(authService.login(loginDto)).rejects.toThrow(
@@ -281,15 +275,13 @@ describe('AuthService', () => {
           id: mockUser.id,
           email: mockUser.email,
           name: mockUser.name,
-          role: mockUser.role,
+          role: mockUser.role as string,
         },
       };
 
       mockJwtService.verifyAsync.mockResolvedValue(mockPayload);
       mockPrismaService.user.findUnique.mockResolvedValue(mockUser);
-      vi.spyOn(authService as any, 'generateTokens').mockResolvedValue(
-        mockTokens,
-      );
+      vi.spyOn(authService, 'generateTokens').mockResolvedValue(mockTokens);
 
       const result = await authService.refreshToken(refreshToken);
 

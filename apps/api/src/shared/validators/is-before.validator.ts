@@ -21,9 +21,11 @@ export function IsBefore(
       options: validationOptions,
       constraints: [property],
       validator: {
-        validate(value: any, args: ValidationArguments) {
+        validate(value: unknown, args: ValidationArguments) {
           const [relatedPropertyName] = args.constraints;
-          const relatedValue = (args.object as any)[relatedPropertyName];
+          const relatedValue = (args.object as Record<string, unknown>)[
+            relatedPropertyName
+          ];
 
           // Si alguno de los valores es undefined, no validamos
           if (value === undefined || relatedValue === undefined) {
@@ -31,8 +33,8 @@ export function IsBefore(
           }
 
           // Convertir a Date si son strings
-          const date1 = new Date(value);
-          const date2 = new Date(relatedValue);
+          const date1 = new Date(value as string | number | Date);
+          const date2 = new Date(relatedValue as string | number | Date);
 
           // Validar que sean fechas válidas
           if (isNaN(date1.getTime()) || isNaN(date2.getTime())) {
@@ -68,9 +70,11 @@ export function IsAfter(
       options: validationOptions,
       constraints: [property],
       validator: {
-        validate(value: any, args: ValidationArguments) {
+        validate(value: unknown, args: ValidationArguments) {
           const [relatedPropertyName] = args.constraints;
-          const relatedValue = (args.object as any)[relatedPropertyName];
+          const relatedValue = (args.object as Record<string, unknown>)[
+            relatedPropertyName
+          ];
 
           // Si alguno de los valores es undefined, no validamos
           if (value === undefined || relatedValue === undefined) {
@@ -78,8 +82,8 @@ export function IsAfter(
           }
 
           // Convertir a Date si son strings
-          const date1 = new Date(value);
-          const date2 = new Date(relatedValue);
+          const date1 = new Date(value as string | number | Date);
+          const date2 = new Date(relatedValue as string | number | Date);
 
           // Validar que sean fechas válidas
           if (isNaN(date1.getTime()) || isNaN(date2.getTime())) {

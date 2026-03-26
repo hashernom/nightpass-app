@@ -1,0 +1,1855 @@
+﻿[
+  {
+    "filePath": "D:\\Nightpass-sc\\apps\\api\\src\\app.controller.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Nightpass-sc\\apps\\api\\src\\app.module.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Nightpass-sc\\apps\\api\\src\\main.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Nightpass-sc\\apps\\api\\src\\modules\\auth\\__tests__\\auth.service.spec.ts",
+    "messages": [
+      {
+        "ruleId": "@typescript-eslint/no-unused-vars",
+        "severity": 1,
+        "message": "'Test' is defined but never used.",
+        "line": 1,
+        "column": 10,
+        "nodeType": null,
+        "messageId": "unusedVar",
+        "endLine": 1,
+        "endColumn": 14
+      },
+      {
+        "ruleId": "@typescript-eslint/no-unused-vars",
+        "severity": 1,
+        "message": "'TestingModule' is defined but never used.",
+        "line": 1,
+        "column": 16,
+        "nodeType": null,
+        "messageId": "unusedVar",
+        "endLine": 1,
+        "endColumn": 29
+      },
+      {
+        "ruleId": "@typescript-eslint/no-unused-vars",
+        "severity": 1,
+        "message": "'prismaService' is assigned a value but never used.",
+        "line": 20,
+        "column": 7,
+        "nodeType": null,
+        "messageId": "unusedVar",
+        "endLine": 20,
+        "endColumn": 20
+      },
+      {
+        "ruleId": "@typescript-eslint/no-unused-vars",
+        "severity": 1,
+        "message": "'jwtService' is assigned a value but never used.",
+        "line": 21,
+        "column": 7,
+        "nodeType": null,
+        "messageId": "unusedVar",
+        "endLine": 21,
+        "endColumn": 17
+      },
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 1,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 43,
+        "column": 28,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 43,
+        "endColumn": 31,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": { "range": [1231, 1234], "text": "unknown" },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": { "range": [1231, 1234], "text": "never" },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ]
+      },
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 1,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 44,
+        "column": 25,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 44,
+        "endColumn": 28,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": { "range": [1260, 1263], "text": "unknown" },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": { "range": [1260, 1263], "text": "never" },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ]
+      },
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 1,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 46,
+        "column": 42,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 46,
+        "endColumn": 45,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": { "range": [1313, 1316], "text": "unknown" },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": { "range": [1313, 1316], "text": "never" },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ]
+      },
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 1,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 47,
+        "column": 36,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 47,
+        "endColumn": 39,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": { "range": [1353, 1356], "text": "unknown" },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": { "range": [1353, 1356], "text": "never" },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ]
+      },
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 1,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 87,
+        "column": 23,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 87,
+        "endColumn": 26,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": { "range": [2374, 2377], "text": "unknown" },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": { "range": [2374, 2377], "text": "never" },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ]
+      },
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 1,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 96,
+        "column": 31,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 96,
+        "endColumn": 34,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": { "range": [2681, 2684], "text": "unknown" },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": { "range": [2681, 2684], "text": "never" },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ]
+      },
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 1,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 182,
+        "column": 26,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 182,
+        "endColumn": 29,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": { "range": [5201, 5204], "text": "unknown" },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": { "range": [5201, 5204], "text": "never" },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ]
+      },
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 1,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 185,
+        "column": 31,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 185,
+        "endColumn": 34,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": { "range": [5294, 5297], "text": "unknown" },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": { "range": [5294, 5297], "text": "never" },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ]
+      },
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 1,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 238,
+        "column": 26,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 238,
+        "endColumn": 29,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": { "range": [6900, 6903], "text": "unknown" },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": { "range": [6900, 6903], "text": "never" },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ]
+      },
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 1,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 290,
+        "column": 31,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 290,
+        "endColumn": 34,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": { "range": [8377, 8380], "text": "unknown" },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": { "range": [8377, 8380], "text": "never" },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ]
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 14,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "import { Test, TestingModule } from '@nestjs/testing';\nimport { ConflictException, UnauthorizedException } from '@nestjs/common';\nimport { JwtService } from '@nestjs/jwt';\nimport { PrismaService } from '../../../shared/prisma/prisma.service';\nimport { AuthService } from '../auth.service';\nimport { RegisterDto } from '../dto/register.dto';\nimport { LoginDto } from '../dto/login.dto';\nimport { UserRole } from '../../../shared/enums';\nimport * as bcrypt from 'bcryptjs';\nimport { describe, beforeEach, it, expect, vi } from 'vitest';\n\n// Mock de bcrypt\nvi.mock('bcryptjs', () => ({\n  hash: vi.fn(),\n  compare: vi.fn(),\n}));\n\ndescribe('AuthService', () => {\n  let authService: AuthService;\n  let prismaService: PrismaService;\n  let jwtService: JwtService;\n\n  const mockPrismaService = {\n    user: {\n      findUnique: vi.fn(),\n      create: vi.fn(),\n      findFirst: vi.fn(),\n    },\n    $connect: vi.fn(),\n    $disconnect: vi.fn(),\n    $on: vi.fn(),\n    $use: vi.fn(),\n  };\n\n  const mockJwtService = {\n    signAsync: vi.fn(),\n    verifyAsync: vi.fn(),\n  };\n\n  beforeEach(async () => {\n    // Instanciar manualmente el servicio para evitar problemas con el TestingModule\n    authService = new AuthService(\n      mockPrismaService as any,\n      mockJwtService as any,\n    );\n    prismaService = mockPrismaService as any;\n    jwtService = mockJwtService as any;\n\n    vi.clearAllMocks();\n  });\n\n  describe('register', () => {\n    it('deberÃ­a registrar un usuario exitosamente', async () => {\n      const registerDto: RegisterDto = {\n        email: 'test@example.com',\n        password: 'password123',\n        name: 'Test User',\n        role: UserRole.USER,\n      };\n\n      const hashedPassword = 'hashedPassword123';\n      const mockUser = {\n        id: 'user-id-123',\n        email: registerDto.email,\n        name: registerDto.name,\n        role: registerDto.role,\n        passwordHash: hashedPassword,\n        provider: 'LOCAL',\n        createdAt: new Date(),\n        updatedAt: new Date(),\n      };\n\n      const mockTokens = {\n        accessToken: 'access-token-123',\n        refreshToken: 'refresh-token-123',\n        expiresIn: 3600,\n        tokenType: 'Bearer',\n        user: {\n          id: mockUser.id,\n          email: mockUser.email,\n          name: mockUser.name,\n          role: mockUser.role,\n        },\n      };\n\n      // Mock de bcrypt.hash\n      (bcrypt.hash as any).mockResolvedValue(hashedPassword);\n\n      // Mock de findUnique (usuario no existe)\n      mockPrismaService.user.findUnique.mockResolvedValue(null);\n\n      // Mock de create\n      mockPrismaService.user.create.mockResolvedValue(mockUser);\n\n      // Mock de generateTokens\n      vi.spyOn(authService as any, 'generateTokens').mockResolvedValue(\n        mockTokens,\n      );\n\n      const result = await authService.register(registerDto);\n\n      expect(mockPrismaService.user.findUnique).toHaveBeenCalledWith({\n        where: { email: registerDto.email },\n      });\n      expect(bcrypt.hash).toHaveBeenCalledWith(registerDto.password, 12);\n      expect(mockPrismaService.user.create).toHaveBeenCalledWith({\n        data: {\n          email: registerDto.email,\n          passwordHash: hashedPassword,\n          name: registerDto.name,\n          role: registerDto.role,\n          provider: 'LOCAL',\n        },\n      });\n      expect(result).toEqual(mockTokens);\n    });\n\n    it('deberÃ­a lanzar ConflictException si el email ya estÃ¡ registrado', async () => {\n      const registerDto: RegisterDto = {\n        email: 'existing@example.com',\n        password: 'password123',\n        name: 'Existing User',\n        role: UserRole.USER,\n      };\n\n      const existingUser = {\n        id: 'existing-id',\n        email: registerDto.email,\n        name: 'Existing User',\n      };\n\n      mockPrismaService.user.findUnique.mockResolvedValue(existingUser);\n\n      await expect(authService.register(registerDto)).rejects.toThrow(\n        ConflictException,\n      );\n      await expect(authService.register(registerDto)).rejects.toThrow(\n        'El email ya estÃ¡ registrado',\n      );\n\n      expect(mockPrismaService.user.findUnique).toHaveBeenCalledWith({\n        where: { email: registerDto.email },\n      });\n      expect(mockPrismaService.user.create).not.toHaveBeenCalled();\n    });\n  });\n\n  describe('login', () => {\n    it('deberÃ­a hacer login exitosamente con credenciales vÃ¡lidas', async () => {\n      const loginDto: LoginDto = {\n        email: 'test@example.com',\n        password: 'password123',\n      };\n\n      const mockUser = {\n        id: 'user-id-123',\n        email: loginDto.email,\n        name: 'Test User',\n        role: UserRole.USER,\n        passwordHash: 'hashedPassword123',\n        provider: 'LOCAL',\n        isActive: true,\n      };\n\n      const mockTokens = {\n        accessToken: 'access-token-123',\n        refreshToken: 'refresh-token-123',\n        expiresIn: 3600,\n        tokenType: 'Bearer',\n        user: {\n          id: mockUser.id,\n          email: mockUser.email,\n          name: mockUser.name,\n          role: mockUser.role,\n        },\n      };\n\n      // Mock de findUnique\n      mockPrismaService.user.findUnique.mockResolvedValue(mockUser);\n\n      // Mock de bcrypt.compare\n      (bcrypt.compare as any).mockResolvedValue(true);\n\n      // Mock de generateTokens\n      vi.spyOn(authService as any, 'generateTokens').mockResolvedValue(\n        mockTokens,\n      );\n\n      const result = await authService.login(loginDto);\n\n      expect(mockPrismaService.user.findUnique).toHaveBeenCalledWith({\n        where: { email: loginDto.email },\n      });\n      expect(bcrypt.compare).toHaveBeenCalledWith(\n        loginDto.password,\n        mockUser.passwordHash,\n      );\n      expect(result).toEqual(mockTokens);\n    });\n\n    it('deberÃ­a lanzar UnauthorizedException si el usuario no existe', async () => {\n      const loginDto: LoginDto = {\n        email: 'nonexistent@example.com',\n        password: 'password123',\n      };\n\n      mockPrismaService.user.findUnique.mockResolvedValue(null);\n\n      await expect(authService.login(loginDto)).rejects.toThrow(\n        UnauthorizedException,\n      );\n      await expect(authService.login(loginDto)).rejects.toThrow(\n        'Credenciales invÃ¡lidas',\n      );\n\n      expect(mockPrismaService.user.findUnique).toHaveBeenCalledWith({\n        where: { email: loginDto.email },\n      });\n      expect(bcrypt.compare).not.toHaveBeenCalled();\n    });\n\n    it('deberÃ­a lanzar UnauthorizedException si la contraseÃ±a es incorrecta', async () => {\n      const loginDto: LoginDto = {\n        email: 'test@example.com',\n        password: 'wrongpassword',\n      };\n\n      const mockUser = {\n        id: 'user-id-123',\n        email: loginDto.email,\n        name: 'Test User',\n        passwordHash: 'hashedPassword123',\n        provider: 'LOCAL',\n        isActive: true,\n      };\n\n      mockPrismaService.user.findUnique.mockResolvedValue(mockUser);\n      (bcrypt.compare as any).mockResolvedValue(false);\n\n      await expect(authService.login(loginDto)).rejects.toThrow(\n        UnauthorizedException,\n      );\n      await expect(authService.login(loginDto)).rejects.toThrow(\n        'Credenciales invÃ¡lidas',\n      );\n\n      expect(mockPrismaService.user.findUnique).toHaveBeenCalledWith({\n        where: { email: loginDto.email },\n      });\n      expect(bcrypt.compare).toHaveBeenCalledWith(\n        loginDto.password,\n        mockUser.passwordHash,\n      );\n    });\n  });\n\n  describe('refreshToken', () => {\n    it('deberÃ­a refrescar el token exitosamente', async () => {\n      const refreshToken = 'valid-refresh-token';\n      const mockPayload = {\n        sub: 'user-id-123',\n        email: 'test@example.com',\n        role: UserRole.USER,\n      };\n\n      const mockUser = {\n        id: mockPayload.sub,\n        email: mockPayload.email,\n        name: 'Test User',\n        role: mockPayload.role,\n        provider: 'LOCAL',\n        isActive: true,\n      };\n\n      const mockTokens = {\n        accessToken: 'new-access-token',\n        refreshToken: 'new-refresh-token',\n        expiresIn: 3600,\n        tokenType: 'Bearer',\n        user: {\n          id: mockUser.id,\n          email: mockUser.email,\n          name: mockUser.name,\n          role: mockUser.role,\n        },\n      };\n\n      mockJwtService.verifyAsync.mockResolvedValue(mockPayload);\n      mockPrismaService.user.findUnique.mockResolvedValue(mockUser);\n      vi.spyOn(authService as any, 'generateTokens').mockResolvedValue(\n        mockTokens,\n      );\n\n      const result = await authService.refreshToken(refreshToken);\n\n      expect(mockJwtService.verifyAsync).toHaveBeenCalledWith(refreshToken);\n      expect(mockPrismaService.user.findUnique).toHaveBeenCalledWith({\n        where: { id: mockPayload.sub },\n      });\n      expect(result).toEqual(mockTokens);\n    });\n\n    it('deberÃ­a lanzar UnauthorizedException si el refresh token es invÃ¡lido', async () => {\n      const refreshToken = 'invalid-refresh-token';\n\n      mockJwtService.verifyAsync.mockRejectedValue(new Error('Token invÃ¡lido'));\n\n      await expect(authService.refreshToken(refreshToken)).rejects.toThrow(\n        UnauthorizedException,\n      );\n      await expect(authService.refreshToken(refreshToken)).rejects.toThrow(\n        'Refresh token invÃ¡lido o expirado',\n      );\n\n      expect(mockJwtService.verifyAsync).toHaveBeenCalledWith(refreshToken);\n      expect(mockPrismaService.user.findFirst).not.toHaveBeenCalled();\n    });\n  });\n});\n",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Nightpass-sc\\apps\\api\\src\\modules\\auth\\auth.constants.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Nightpass-sc\\apps\\api\\src\\modules\\auth\\auth.controller.ts",
+    "messages": [
+      {
+        "ruleId": "@typescript-eslint/no-unused-vars",
+        "severity": 1,
+        "message": "'Patch' is defined but never used.",
+        "line": 11,
+        "column": 3,
+        "nodeType": null,
+        "messageId": "unusedVar",
+        "endLine": 11,
+        "endColumn": 8
+      },
+      {
+        "ruleId": "@typescript-eslint/no-unused-vars",
+        "severity": 1,
+        "message": "'RolesGuard' is defined but never used.",
+        "line": 31,
+        "column": 10,
+        "nodeType": null,
+        "messageId": "unusedVar",
+        "endLine": 31,
+        "endColumn": 20
+      },
+      {
+        "ruleId": "@typescript-eslint/no-unused-vars",
+        "severity": 1,
+        "message": "'Roles' is defined but never used.",
+        "line": 32,
+        "column": 10,
+        "nodeType": null,
+        "messageId": "unusedVar",
+        "endLine": 32,
+        "endColumn": 15
+      },
+      {
+        "ruleId": "@typescript-eslint/no-unused-vars",
+        "severity": 1,
+        "message": "'UserRole' is defined but never used.",
+        "line": 33,
+        "column": 10,
+        "nodeType": null,
+        "messageId": "unusedVar",
+        "endLine": 33,
+        "endColumn": 18
+      },
+      {
+        "ruleId": "@typescript-eslint/no-unused-vars",
+        "severity": 1,
+        "message": "'JWT_CONSTANTS' is defined but never used.",
+        "line": 35,
+        "column": 28,
+        "nodeType": null,
+        "messageId": "unusedVar",
+        "endLine": 35,
+        "endColumn": 41
+      },
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 1,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 236,
+        "column": 17,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 236,
+        "endColumn": 20,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": { "range": [7256, 7259], "text": "unknown" },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": { "range": [7256, 7259], "text": "never" },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ]
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 6,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "import {\n  Controller,\n  Post,\n  Body,\n  HttpCode,\n  HttpStatus,\n  UseGuards,\n  Get,\n  Req,\n  Res,\n  Patch,\n  UseInterceptors,\n  ClassSerializerInterceptor,\n  UnauthorizedException,\n} from '@nestjs/common';\nimport {\n  ApiTags,\n  ApiOperation,\n  ApiResponse,\n  ApiBearerAuth,\n  ApiBody,\n  ApiCookieAuth,\n} from '@nestjs/swagger';\nimport { AuthGuard } from '@nestjs/passport';\nimport { AuthService } from './auth.service';\nimport { RegisterDto } from './dto/register.dto';\nimport { LoginDto } from './dto/login.dto';\nimport { TokensResponseDto, RefreshTokenDto } from './dto/tokens.dto';\nimport { ThrottlerGuard, Throttle } from '@nestjs/throttler';\nimport { JwtAuthGuard } from './guards/jwt-auth.guard';\nimport { RolesGuard } from './guards/roles.guard';\nimport { Roles } from './decorators/roles.decorator';\nimport { UserRole } from '../../shared/enums';\nimport { Request, Response } from 'express';\nimport { COOKIE_CONSTANTS, JWT_CONSTANTS } from './auth.constants';\n\n@ApiTags('auth')\n@Controller('auth')\n@UseInterceptors(ClassSerializerInterceptor)\n@UseGuards(ThrottlerGuard)\nexport class AuthController {\n  constructor(private readonly authService: AuthService) {}\n\n  @Post('register')\n  @HttpCode(HttpStatus.CREATED)\n  @Throttle({ default: { ttl: 60000, limit: 10 } })\n  @ApiOperation({ summary: 'Registrar nuevo usuario' })\n  @ApiResponse({\n    status: HttpStatus.CREATED,\n    description: 'Usuario registrado exitosamente',\n    type: TokensResponseDto,\n  })\n  @ApiResponse({\n    status: HttpStatus.CONFLICT,\n    description: 'El email ya estÃ¡ registrado',\n  })\n  @ApiResponse({\n    status: HttpStatus.BAD_REQUEST,\n    description: 'Datos de registro invÃ¡lidos',\n  })\n  async register(\n    @Body() registerDto: RegisterDto,\n    @Res({ passthrough: true }) res: Response,\n  ): Promise<{ message: string }> {\n    const tokens = await this.authService.register(registerDto);\n\n    // Configurar cookie de access token\n    res.cookie(COOKIE_CONSTANTS.ACCESS_TOKEN_NAME, tokens.accessToken, {\n      httpOnly: COOKIE_CONSTANTS.HTTP_ONLY,\n      secure: COOKIE_CONSTANTS.SECURE,\n      sameSite: COOKIE_CONSTANTS.SAME_SITE,\n      path: COOKIE_CONSTANTS.PATH,\n      maxAge: 15 * 60 * 1000, // 15 minutos\n    });\n\n    // Configurar cookie de refresh token\n    res.cookie(COOKIE_CONSTANTS.REFRESH_TOKEN_NAME, tokens.refreshToken, {\n      httpOnly: COOKIE_CONSTANTS.HTTP_ONLY,\n      secure: COOKIE_CONSTANTS.SECURE,\n      sameSite: COOKIE_CONSTANTS.SAME_SITE,\n      path: COOKIE_CONSTANTS.PATH,\n      maxAge: 7 * 24 * 60 * 60 * 1000, // 7 dÃ­as\n    });\n\n    return { message: 'Usuario registrado exitosamente' };\n  }\n\n  @Post('login')\n  @HttpCode(HttpStatus.OK)\n  @Throttle({ default: { ttl: 60000, limit: 10 } })\n  @ApiOperation({ summary: 'Iniciar sesiÃ³n con email/password' })\n  @ApiResponse({\n    status: HttpStatus.OK,\n    description: 'Login exitoso',\n    type: TokensResponseDto,\n  })\n  @ApiResponse({\n    status: HttpStatus.UNAUTHORIZED,\n    description: 'Credenciales invÃ¡lidas',\n  })\n  @ApiResponse({\n    status: HttpStatus.TOO_MANY_REQUESTS,\n    description: 'Demasiados intentos de login',\n  })\n  async login(\n    @Body() loginDto: LoginDto,\n    @Req() req: Request,\n    @Res({ passthrough: true }) res: Response,\n  ): Promise<{ message: string }> {\n    const ipAddress = req.ip;\n    const tokens = await this.authService.login(loginDto, ipAddress);\n\n    // Configurar cookie de access token\n    res.cookie(COOKIE_CONSTANTS.ACCESS_TOKEN_NAME, tokens.accessToken, {\n      httpOnly: COOKIE_CONSTANTS.HTTP_ONLY,\n      secure: COOKIE_CONSTANTS.SECURE,\n      sameSite: COOKIE_CONSTANTS.SAME_SITE,\n      path: COOKIE_CONSTANTS.PATH,\n      maxAge: 15 * 60 * 1000, // 15 minutos\n    });\n\n    // Configurar cookie de refresh token\n    res.cookie(COOKIE_CONSTANTS.REFRESH_TOKEN_NAME, tokens.refreshToken, {\n      httpOnly: COOKIE_CONSTANTS.HTTP_ONLY,\n      secure: COOKIE_CONSTANTS.SECURE,\n      sameSite: COOKIE_CONSTANTS.SAME_SITE,\n      path: COOKIE_CONSTANTS.PATH,\n      maxAge: 7 * 24 * 60 * 60 * 1000, // 7 dÃ­as\n    });\n\n    return { message: 'Login exitoso' };\n  }\n\n  @Post('refresh')\n  @HttpCode(HttpStatus.OK)\n  @ApiOperation({ summary: 'Refrescar access token' })\n  @ApiCookieAuth('refresh_token')\n  @ApiBody({ type: RefreshTokenDto })\n  @ApiResponse({\n    status: HttpStatus.OK,\n    description: 'Token refrescado exitosamente',\n    type: TokensResponseDto,\n  })\n  @ApiResponse({\n    status: HttpStatus.UNAUTHORIZED,\n    description: 'Refresh token invÃ¡lido o expirado',\n  })\n  async refreshToken(\n    @Req() req: Request,\n    @Res({ passthrough: true }) res: Response,\n  ): Promise<{ message: string }> {\n    const refreshToken = req.cookies?.[COOKIE_CONSTANTS.REFRESH_TOKEN_NAME];\n\n    if (!refreshToken) {\n      throw new UnauthorizedException('Refresh token no encontrado en cookies');\n    }\n\n    const tokens = await this.authService.refreshToken(refreshToken);\n\n    // Configurar cookie de access token\n    res.cookie(COOKIE_CONSTANTS.ACCESS_TOKEN_NAME, tokens.accessToken, {\n      httpOnly: COOKIE_CONSTANTS.HTTP_ONLY,\n      secure: COOKIE_CONSTANTS.SECURE,\n      sameSite: COOKIE_CONSTANTS.SAME_SITE,\n      path: COOKIE_CONSTANTS.PATH,\n      maxAge: 15 * 60 * 1000, // 15 minutos\n    });\n\n    // Configurar cookie de refresh token (renovar)\n    res.cookie(COOKIE_CONSTANTS.REFRESH_TOKEN_NAME, tokens.refreshToken, {\n      httpOnly: COOKIE_CONSTANTS.HTTP_ONLY,\n      secure: COOKIE_CONSTANTS.SECURE,\n      sameSite: COOKIE_CONSTANTS.SAME_SITE,\n      path: COOKIE_CONSTANTS.PATH,\n      maxAge: 7 * 24 * 60 * 60 * 1000, // 7 dÃ­as\n    });\n\n    return { message: 'Token refrescado exitosamente' };\n  }\n\n  @Post('logout')\n  @HttpCode(HttpStatus.OK)\n  @UseGuards(JwtAuthGuard)\n  @ApiBearerAuth()\n  @ApiOperation({ summary: 'Cerrar sesiÃ³n' })\n  @ApiResponse({\n    status: HttpStatus.OK,\n    description: 'SesiÃ³n cerrada exitosamente',\n  })\n  async logout(\n    @Res({ passthrough: true }) res: Response,\n  ): Promise<{ message: string }> {\n    // Limpiar cookie de access token\n    res.clearCookie(COOKIE_CONSTANTS.ACCESS_TOKEN_NAME, {\n      httpOnly: COOKIE_CONSTANTS.HTTP_ONLY,\n      secure: COOKIE_CONSTANTS.SECURE,\n      sameSite: COOKIE_CONSTANTS.SAME_SITE,\n      path: COOKIE_CONSTANTS.PATH,\n    });\n\n    // Limpiar cookie de refresh token\n    res.clearCookie(COOKIE_CONSTANTS.REFRESH_TOKEN_NAME, {\n      httpOnly: COOKIE_CONSTANTS.HTTP_ONLY,\n      secure: COOKIE_CONSTANTS.SECURE,\n      sameSite: COOKIE_CONSTANTS.SAME_SITE,\n      path: COOKIE_CONSTANTS.PATH,\n    });\n\n    return { message: 'SesiÃ³n cerrada exitosamente' };\n  }\n\n  @Get('google')\n  @ApiOperation({ summary: 'Iniciar autenticaciÃ³n con Google' })\n  @ApiResponse({\n    status: HttpStatus.FOUND,\n    description: 'RedirecciÃ³n a Google OAuth',\n  })\n  async googleAuth() {\n    // La redirecciÃ³n serÃ¡ manejada por Passport\n    return { message: 'Redirigiendo a Google OAuth' };\n  }\n\n  @Get('google/callback')\n  @UseGuards(AuthGuard('google'))\n  @ApiOperation({ summary: 'Callback de Google OAuth' })\n  @ApiResponse({\n    status: HttpStatus.OK,\n    description: 'AutenticaciÃ³n con Google exitosa',\n    type: TokensResponseDto,\n  })\n  @ApiResponse({\n    status: HttpStatus.UNAUTHORIZED,\n    description: 'AutenticaciÃ³n con Google fallida',\n  })\n  async googleAuthCallback(\n    @Req() req: any,\n    @Res({ passthrough: true }) res: Response,\n  ): Promise<TokensResponseDto> {\n    // El usuario ya estÃ¡ autenticado por Passport\n    const user = req.user;\n\n    if (!user) {\n      throw new UnauthorizedException('AutenticaciÃ³n con Google fallida');\n    }\n\n    // Generar tokens para el usuario\n    const tokens = await this.authService.generateTokens(user);\n\n    // Configurar cookie de refresh token\n    const refreshToken = await this.authService.generateRefreshToken(user);\n\n    res.cookie(COOKIE_CONSTANTS.REFRESH_TOKEN_NAME, refreshToken, {\n      httpOnly: COOKIE_CONSTANTS.HTTP_ONLY,\n      secure: COOKIE_CONSTANTS.SECURE,\n      sameSite: COOKIE_CONSTANTS.SAME_SITE,\n      path: COOKIE_CONSTANTS.PATH,\n      maxAge: 7 * 24 * 60 * 60 * 1000, // 7 dÃ­as\n    });\n\n    return tokens;\n  }\n}\n",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Nightpass-sc\\apps\\api\\src\\modules\\auth\\auth.module.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Nightpass-sc\\apps\\api\\src\\modules\\auth\\auth.service.ts",
+    "messages": [
+      {
+        "ruleId": "@typescript-eslint/no-unused-vars",
+        "severity": 1,
+        "message": "'COOKIE_CONSTANTS' is defined but never used.",
+        "line": 15,
+        "column": 25,
+        "nodeType": null,
+        "messageId": "unusedVar",
+        "endLine": 15,
+        "endColumn": 41
+      },
+      {
+        "ruleId": "no-console",
+        "severity": 1,
+        "message": "Unexpected console statement.",
+        "line": 177,
+        "column": 5,
+        "nodeType": "MemberExpression",
+        "messageId": "unexpected",
+        "endLine": 177,
+        "endColumn": 16,
+        "suggestions": [
+          {
+            "messageId": "removeConsole",
+            "data": { "propertyName": "log" },
+            "fix": { "range": [4446, 4558], "text": "" },
+            "desc": "Remove the console.log()."
+          }
+        ]
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 2,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "import {\n  Injectable,\n  UnauthorizedException,\n  ConflictException,\n  ForbiddenException,\n} from '@nestjs/common';\nimport { JwtService } from '@nestjs/jwt';\nimport { PrismaService } from '../../shared/prisma/prisma.service';\nimport { RegisterDto } from './dto/register.dto';\nimport { LoginDto } from './dto/login.dto';\nimport { TokensResponseDto } from './dto/tokens.dto';\nimport * as bcrypt from 'bcryptjs';\nimport { User } from '@prisma/client';\nimport { UserRole } from '../../shared/enums';\nimport { JWT_CONSTANTS, COOKIE_CONSTANTS } from './auth.constants';\n\nexport interface JwtPayload {\n  sub: string;\n  email: string;\n  role: UserRole;\n}\n\n@Injectable()\nexport class AuthService {\n  private readonly saltRounds = 12;\n\n  constructor(\n    private readonly prisma: PrismaService,\n    private readonly jwtService: JwtService,\n  ) {}\n\n  /**\n   * Registra un nuevo usuario con email/password\n   */\n  async register(registerDto: RegisterDto): Promise<TokensResponseDto> {\n    const { email, password, name, role = UserRole.USER } = registerDto;\n\n    // Verificar si el usuario ya existe\n    const existingUser = await this.prisma.user.findUnique({\n      where: { email },\n    });\n\n    if (existingUser) {\n      throw new ConflictException('El email ya estÃ¡ registrado');\n    }\n\n    // Hash de la contraseÃ±a\n    const passwordHash = await bcrypt.hash(password, this.saltRounds);\n\n    // Crear usuario\n    const user = await this.prisma.user.create({\n      data: {\n        email,\n        name,\n        passwordHash,\n        role,\n        provider: 'LOCAL',\n      },\n    });\n\n    // Generar tokens\n    return this.generateTokens(user);\n  }\n\n  /**\n   * Autentica un usuario con email/password\n   */\n  async login(\n    loginDto: LoginDto,\n    ipAddress?: string,\n  ): Promise<TokensResponseDto> {\n    const { email, password } = loginDto;\n\n    // Buscar usuario\n    const user = await this.prisma.user.findUnique({\n      where: { email },\n    });\n\n    if (!user) {\n      throw new UnauthorizedException('Credenciales invÃ¡lidas');\n    }\n\n    // Verificar si el usuario estÃ¡ activo\n    if (!user.isActive) {\n      throw new ForbiddenException('La cuenta estÃ¡ desactivada');\n    }\n\n    // Verificar contraseÃ±a\n    const isPasswordValid = await bcrypt.compare(\n      password,\n      user.passwordHash || '',\n    );\n\n    if (!isPasswordValid) {\n      throw new UnauthorizedException('Credenciales invÃ¡lidas');\n    }\n\n    // Registrar intento de login (para rate limiting)\n    if (ipAddress) {\n      await this.recordLoginAttempt(user.id, ipAddress, true);\n    }\n\n    // Generar tokens\n    return this.generateTokens(user);\n  }\n\n  /**\n   * Genera access y refresh tokens para un usuario\n   */\n  async generateTokens(user: User): Promise<TokensResponseDto> {\n    const payload: JwtPayload = {\n      sub: user.id,\n      email: user.email,\n      role: user.role as UserRole,\n    };\n\n    const accessToken = await this.jwtService.signAsync(payload, {\n      expiresIn: JWT_CONSTANTS.ACCESS_TOKEN_EXPIRES_IN,\n    });\n\n    const refreshToken = await this.jwtService.signAsync(\n      { sub: user.id },\n      {\n        expiresIn: JWT_CONSTANTS.REFRESH_TOKEN_EXPIRES_IN,\n      },\n    );\n\n    return {\n      accessToken,\n      refreshToken,\n      expiresIn: 15 * 60, // 15 minutos en segundos\n      tokenType: 'Bearer',\n      user: {\n        id: user.id,\n        email: user.email,\n        name: user.name,\n        role: user.role,\n      },\n    };\n  }\n\n  /**\n   * Refresca un access token usando un refresh token\n   */\n  async refreshToken(refreshToken: string): Promise<TokensResponseDto> {\n    try {\n      const payload = await this.jwtService.verifyAsync<{ sub: string }>(\n        refreshToken,\n      );\n\n      const user = await this.prisma.user.findUnique({\n        where: { id: payload.sub },\n      });\n\n      if (!user || !user.isActive) {\n        throw new UnauthorizedException('Usuario no encontrado o inactivo');\n      }\n\n      return this.generateTokens(user);\n    } catch (error) {\n      throw new UnauthorizedException('Refresh token invÃ¡lido o expirado');\n    }\n  }\n\n  /**\n   * Registra un intento de login (para rate limiting)\n   */\n  private async recordLoginAttempt(\n    userId: string,\n    ipAddress: string,\n    success: boolean,\n  ): Promise<void> {\n    // Log estructurado para auditorÃ­a (en producciÃ³n se enviarÃ­a a un sistema de logging)\n    const timestamp = new Date().toISOString();\n    const status = success ? 'SUCCESS' : 'FAILURE';\n\n    console.log(\n      `[LOGIN_ATTEMPT] ${timestamp} - User: ${userId}, IP: ${ipAddress}, Status: ${status}`,\n    );\n\n    // El rate limiting real lo maneja ThrottlerModule a nivel global\n    // No hay tabla de login_attempt en el esquema actual, por lo que solo registramos en logs\n  }\n\n  /**\n   * Valida un usuario por ID (para guards)\n   */\n  async validateUser(userId: string): Promise<User | null> {\n    return this.prisma.user.findUnique({\n      where: { id: userId, isActive: true },\n    });\n  }\n\n  /**\n   * Obtiene informaciÃ³n del usuario actual\n   */\n  async getCurrentUser(userId: string): Promise<Partial<User>> {\n    const user = await this.prisma.user.findUnique({\n      where: { id: userId },\n      select: {\n        id: true,\n        email: true,\n        name: true,\n        role: true,\n        avatarUrl: true,\n        createdAt: true,\n        updatedAt: true,\n      },\n    });\n\n    if (!user) {\n      throw new UnauthorizedException('Usuario no encontrado');\n    }\n\n    return user;\n  }\n\n  /**\n   * Actualiza informaciÃ³n del usuario actual\n   */\n  async updateCurrentUser(\n    userId: string,\n    data: { name?: string; avatarUrl?: string },\n  ): Promise<Partial<User>> {\n    const user = await this.prisma.user.update({\n      where: { id: userId },\n      data: {\n        ...(data.name && { name: data.name }),\n        ...(data.avatarUrl && { avatarUrl: data.avatarUrl }),\n      },\n      select: {\n        id: true,\n        email: true,\n        name: true,\n        role: true,\n        avatarUrl: true,\n        createdAt: true,\n        updatedAt: true,\n      },\n    });\n\n    return user;\n  }\n\n  /**\n   * Genera solo el refresh token (para uso interno en estrategias OAuth)\n   */\n  async generateRefreshToken(user: User): Promise<string> {\n    return this.jwtService.signAsync(\n      { sub: user.id },\n      {\n        expiresIn: JWT_CONSTANTS.REFRESH_TOKEN_EXPIRES_IN,\n      },\n    );\n  }\n\n  /**\n   * Obtiene el servicio Prisma (para uso interno en estrategias OAuth)\n   */\n  getPrisma(): PrismaService {\n    return this.prisma;\n  }\n}\n",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Nightpass-sc\\apps\\api\\src\\modules\\auth\\decorators\\roles.decorator.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Nightpass-sc\\apps\\api\\src\\modules\\auth\\dto\\login.dto.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Nightpass-sc\\apps\\api\\src\\modules\\auth\\dto\\register.dto.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Nightpass-sc\\apps\\api\\src\\modules\\auth\\dto\\tokens.dto.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Nightpass-sc\\apps\\api\\src\\modules\\auth\\guards\\jwt-auth.guard.ts",
+    "messages": [
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 1,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 25,
+        "column": 22,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 25,
+        "endColumn": 25,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": { "range": [616, 619], "text": "unknown" },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": { "range": [616, 619], "text": "never" },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ]
+      },
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 1,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 25,
+        "column": 33,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 25,
+        "endColumn": 36,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": { "range": [627, 630], "text": "unknown" },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": { "range": [627, 630], "text": "never" },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ]
+      },
+      {
+        "ruleId": "@typescript-eslint/no-unused-vars",
+        "severity": 1,
+        "message": "'info' is defined but never used. Allowed unused args must match /^_/u.",
+        "line": 25,
+        "column": 38,
+        "nodeType": null,
+        "messageId": "unusedVar",
+        "endLine": 25,
+        "endColumn": 42
+      },
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 1,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 25,
+        "column": 44,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 25,
+        "endColumn": 47,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": { "range": [638, 641], "text": "unknown" },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": { "range": [638, 641], "text": "never" },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ]
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 4,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "import { Injectable, ExecutionContext } from '@nestjs/common';\nimport { AuthGuard } from '@nestjs/passport';\nimport { Reflector } from '@nestjs/core';\n\n@Injectable()\nexport class JwtAuthGuard extends AuthGuard('jwt') {\n  constructor(private reflector: Reflector) {\n    super();\n  }\n\n  canActivate(context: ExecutionContext) {\n    // Verificar si la ruta es pÃºblica\n    const isPublic = this.reflector.getAllAndOverride<boolean>('isPublic', [\n      context.getHandler(),\n      context.getClass(),\n    ]);\n\n    if (isPublic) {\n      return true;\n    }\n\n    return super.canActivate(context);\n  }\n\n  handleRequest(err: any, user: any, info: any) {\n    // Puedes personalizar el manejo de errores aquÃ­\n    if (err || !user) {\n      throw err || new Error('No autorizado');\n    }\n    return user;\n  }\n}\n",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Nightpass-sc\\apps\\api\\src\\modules\\auth\\guards\\roles.guard.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Nightpass-sc\\apps\\api\\src\\modules\\auth\\strategies\\google.strategy.ts",
+    "messages": [
+      {
+        "ruleId": "@typescript-eslint/no-unused-vars",
+        "severity": 1,
+        "message": "'User' is defined but never used.",
+        "line": 5,
+        "column": 10,
+        "nodeType": null,
+        "messageId": "unusedVar",
+        "endLine": 5,
+        "endColumn": 14
+      },
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 1,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 28,
+        "column": 14,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 28,
+        "endColumn": 17,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": { "range": [944, 947], "text": "unknown" },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": { "range": [944, 947], "text": "never" },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ]
+      },
+      {
+        "ruleId": "@typescript-eslint/no-unused-vars",
+        "severity": 1,
+        "message": "'id' is assigned a value but never used.",
+        "line": 32,
+        "column": 15,
+        "nodeType": null,
+        "messageId": "unusedVar",
+        "endLine": 32,
+        "endColumn": 17
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 3,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "import { Injectable } from '@nestjs/common';\nimport { PassportStrategy } from '@nestjs/passport';\nimport { Strategy, VerifyCallback } from 'passport-google-oauth20';\nimport { AuthService } from '../auth.service';\nimport { User } from '@prisma/client';\nimport { AuthProvider } from '../../../shared/enums';\n\n@Injectable()\nexport class GoogleStrategy extends PassportStrategy(Strategy, 'google') {\n  constructor(private readonly authService: AuthService) {\n    super({\n      clientID: process.env.GOOGLE_CLIENT_ID || 'google-client-id',\n      clientSecret: process.env.GOOGLE_CLIENT_SECRET || 'google-client-secret',\n      callbackURL:\n        process.env.GOOGLE_CALLBACK_URL ||\n        'http://localhost:3000/auth/google/callback',\n      scope: ['email', 'profile'],\n      passReqToCallback: false,\n    });\n  }\n\n  /**\n   * Valida el usuario de Google OAuth\n   */\n  async validate(\n    accessToken: string,\n    refreshToken: string,\n    profile: any,\n    done: VerifyCallback,\n  ): Promise<void> {\n    try {\n      const { id, displayName, emails, photos } = profile;\n      const email = emails?.[0]?.value;\n      const avatarUrl = photos?.[0]?.value;\n\n      if (!email) {\n        return done(new Error('Email no proporcionado por Google'), false);\n      }\n\n      // Buscar usuario existente por email\n      let user = await this.authService.getPrisma().user.findUnique({\n        where: { email },\n      });\n\n      if (!user) {\n        // Crear nuevo usuario si no existe\n        user = await this.authService.getPrisma().user.create({\n          data: {\n            email,\n            name: displayName || email.split('@')[0],\n            avatarUrl,\n            provider: AuthProvider.GOOGLE,\n            role: 'USER', // Rol por defecto para usuarios de Google\n            isActive: true,\n          },\n        });\n      } else if (user.provider !== AuthProvider.GOOGLE) {\n        // Si el usuario existe pero con otro provider, actualizar\n        user = await this.authService.getPrisma().user.update({\n          where: { id: user.id },\n          data: {\n            provider: AuthProvider.GOOGLE,\n            avatarUrl: avatarUrl || user.avatarUrl,\n          },\n        });\n      }\n\n      // Retornar el usuario\n      done(null, user);\n    } catch (error) {\n      done(error as Error, false);\n    }\n  }\n}\n",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Nightpass-sc\\apps\\api\\src\\modules\\auth\\strategies\\jwt.strategy.ts",
+    "messages": [
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 1,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 30,
+        "column": 18,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 30,
+        "endColumn": 21,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": { "range": [1092, 1095], "text": "unknown" },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": { "range": [1092, 1095], "text": "never" },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ]
+      },
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 1,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 32,
+        "column": 21,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 32,
+        "endColumn": 24,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": { "range": [1148, 1151], "text": "unknown" },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": { "range": [1148, 1151], "text": "never" },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ]
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 2,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "import { Injectable, UnauthorizedException } from '@nestjs/common';\r\nimport { PassportStrategy } from '@nestjs/passport';\r\nimport { ExtractJwt, Strategy } from 'passport-jwt';\r\nimport { AuthService, JwtPayload } from '../auth.service';\r\nimport { User } from '@prisma/client';\r\nimport { Request } from 'express';\r\nimport { COOKIE_CONSTANTS } from '../auth.constants';\r\n\r\n@Injectable()\r\nexport class JwtStrategy extends PassportStrategy(Strategy) {\r\n  constructor(private readonly authService: AuthService) {\r\n    super({\r\n      jwtFromRequest: (req: Request) => {\r\n        // 1. Intentar obtener el token del header Authorization\r\n        const authHeader = ExtractJwt.fromAuthHeaderAsBearerToken()(req);\r\n        if (authHeader) {\r\n          return authHeader;\r\n        }\r\n\r\n        // 2. Intentar obtener el token de la cookie\r\n        const cookieToken = req.cookies?.[COOKIE_CONSTANTS.ACCESS_TOKEN_NAME];\r\n        if (cookieToken) {\r\n          return cookieToken;\r\n        }\r\n\r\n        return null;\r\n      },\r\n      ignoreExpiration: false,\r\n      secretOrKeyProvider: (\r\n        request: any,\r\n        rawJwtToken: string,\r\n        done: (err: any, secret?: string) => void,\r\n      ) => {\r\n        // En producciÃ³n, esto leerÃ­a la clave pÃºblica desde archivo o variable de entorno\r\n        // Por ahora usamos una clave secreta temporal\r\n        const secret =\r\n          process.env.JWT_SECRET || 'temporal-secret-key-for-development';\r\n        done(null, secret);\r\n      },\r\n      algorithms: ['HS256'], // Temporalmente HS256, luego cambiaremos a RS256\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Valida el payload del JWT y retorna el usuario\r\n   */\r\n  async validate(payload: JwtPayload): Promise<User> {\r\n    const user = await this.authService.validateUser(payload.sub);\r\n\r\n    if (!user) {\r\n      throw new UnauthorizedException('Usuario no encontrado o inactivo');\r\n    }\r\n\r\n    return user;\r\n  }\r\n}\r\n",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Nightpass-sc\\apps\\api\\src\\modules\\auth\\users.controller.ts",
+    "messages": [
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 1,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 41,
+        "column": 40,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 41,
+        "endColumn": 43,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": { "range": [1009, 1012], "text": "unknown" },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": { "range": [1009, 1012], "text": "never" },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ]
+      },
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 1,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 71,
+        "column": 21,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 71,
+        "endColumn": 24,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": { "range": [1751, 1754], "text": "unknown" },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": { "range": [1751, 1754], "text": "never" },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ]
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 2,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "import {\n  Controller,\n  Get,\n  Patch,\n  Body,\n  UseGuards,\n  Request,\n  HttpCode,\n  HttpStatus,\n} from '@nestjs/common';\nimport {\n  ApiTags,\n  ApiOperation,\n  ApiResponse,\n  ApiBearerAuth,\n  ApiBody,\n} from '@nestjs/swagger';\nimport { AuthService } from './auth.service';\nimport { JwtAuthGuard } from './guards/jwt-auth.guard';\nimport { RolesGuard } from './guards/roles.guard';\nimport { Roles } from './decorators/roles.decorator';\nimport { UserRole } from '../../shared/enums';\n\n@ApiTags('users')\n@Controller('users')\n@UseGuards(JwtAuthGuard, RolesGuard)\nexport class UsersController {\n  constructor(private readonly authService: AuthService) {}\n\n  @Get('me')\n  @ApiBearerAuth()\n  @ApiOperation({ summary: 'Obtener informaciÃ³n del usuario actual' })\n  @ApiResponse({\n    status: HttpStatus.OK,\n    description: 'InformaciÃ³n del usuario obtenida exitosamente',\n  })\n  @ApiResponse({\n    status: HttpStatus.UNAUTHORIZED,\n    description: 'Usuario no autenticado',\n  })\n  async getCurrentUser(@Request() req: any) {\n    const userId = req.user.id;\n    return this.authService.getCurrentUser(userId);\n  }\n\n  @Patch('me')\n  @HttpCode(HttpStatus.OK)\n  @ApiBearerAuth()\n  @ApiOperation({ summary: 'Actualizar informaciÃ³n del usuario actual' })\n  @ApiBody({\n    schema: {\n      type: 'object',\n      properties: {\n        name: { type: 'string', example: 'Nuevo Nombre' },\n        avatarUrl: {\n          type: 'string',\n          example: 'https://example.com/avatar.jpg',\n        },\n      },\n    },\n  })\n  @ApiResponse({\n    status: HttpStatus.OK,\n    description: 'Usuario actualizado exitosamente',\n  })\n  @ApiResponse({\n    status: HttpStatus.UNAUTHORIZED,\n    description: 'Usuario no autenticado',\n  })\n  async updateCurrentUser(\n    @Request() req: any,\n    @Body() updateData: { name?: string; avatarUrl?: string },\n  ) {\n    const userId = req.user.id;\n    return this.authService.updateCurrentUser(userId, updateData);\n  }\n\n  @Get('admin-only')\n  @Roles(UserRole.ADMIN_VENUE)\n  @ApiBearerAuth()\n  @ApiOperation({ summary: 'Endpoint solo para administradores' })\n  @ApiResponse({\n    status: HttpStatus.OK,\n    description: 'Acceso permitido a administrador',\n  })\n  @ApiResponse({\n    status: HttpStatus.FORBIDDEN,\n    description: 'Acceso denegado - se requiere rol ADMIN_VENUE',\n  })\n  async adminOnlyEndpoint() {\n    return {\n      message: 'Este endpoint solo es accesible para administradores de venue',\n      timestamp: new Date().toISOString(),\n    };\n  }\n\n  @Get('staff-only')\n  @Roles(UserRole.STAFF_SCANNER, UserRole.ADMIN_VENUE)\n  @ApiBearerAuth()\n  @ApiOperation({ summary: 'Endpoint para staff y administradores' })\n  @ApiResponse({\n    status: HttpStatus.OK,\n    description: 'Acceso permitido a staff o administrador',\n  })\n  @ApiResponse({\n    status: HttpStatus.FORBIDDEN,\n    description:\n      'Acceso denegado - se requiere rol STAFF_SCANNER o ADMIN_VENUE',\n  })\n  async staffOnlyEndpoint() {\n    return {\n      message:\n        'Este endpoint es accesible para staff scanner y administradores',\n      timestamp: new Date().toISOString(),\n    };\n  }\n\n  @Get('user-only')\n  @Roles(UserRole.USER)\n  @ApiBearerAuth()\n  @ApiOperation({ summary: 'Endpoint solo para usuarios regulares' })\n  @ApiResponse({\n    status: HttpStatus.OK,\n    description: 'Acceso permitido a usuario regular',\n  })\n  @ApiResponse({\n    status: HttpStatus.FORBIDDEN,\n    description: 'Acceso denegado - se requiere rol USER',\n  })\n  async userOnlyEndpoint() {\n    return {\n      message: 'Este endpoint solo es accesible para usuarios regulares',\n      timestamp: new Date().toISOString(),\n    };\n  }\n}\n",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Nightpass-sc\\apps\\api\\src\\modules\\events\\__tests__\\events.service.spec.ts",
+    "messages": [
+      {
+        "ruleId": "@typescript-eslint/no-unused-vars",
+        "severity": 1,
+        "message": "'Test' is defined but never used.",
+        "line": 1,
+        "column": 10,
+        "nodeType": null,
+        "messageId": "unusedVar",
+        "endLine": 1,
+        "endColumn": 14
+      },
+      {
+        "ruleId": "@typescript-eslint/no-unused-vars",
+        "severity": 1,
+        "message": "'TestingModule' is defined but never used.",
+        "line": 1,
+        "column": 16,
+        "nodeType": null,
+        "messageId": "unusedVar",
+        "endLine": 1,
+        "endColumn": 29
+      },
+      {
+        "ruleId": "@typescript-eslint/no-unused-vars",
+        "severity": 1,
+        "message": "'prismaService' is assigned a value but never used.",
+        "line": 12,
+        "column": 7,
+        "nodeType": null,
+        "messageId": "unusedVar",
+        "endLine": 12,
+        "endColumn": 20
+      },
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 1,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 15,
+        "column": 28,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 15,
+        "endColumn": 31,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": { "range": [666, 669], "text": "unknown" },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": { "range": [666, 669], "text": "never" },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ]
+      },
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 1,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 42,
+        "column": 60,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 42,
+        "endColumn": 63,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": { "range": [1341, 1344], "text": "unknown" },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": { "range": [1341, 1344], "text": "never" },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ]
+      },
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 1,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 43,
+        "column": 42,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 43,
+        "endColumn": 45,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": { "range": [1388, 1391], "text": "unknown" },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": { "range": [1388, 1391], "text": "never" },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ]
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 6,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "import { Test, TestingModule } from '@nestjs/testing';\nimport { NotFoundException, ForbiddenException } from '@nestjs/common';\nimport { PrismaService } from '../../../shared/prisma/prisma.service';\nimport { EventsService } from '../events.service';\nimport { CreateEventDto } from '../dto/create-event.dto';\nimport { UpdateEventDto } from '../dto/update-event.dto';\nimport { EventStatus, UserRole } from '../../../shared/enums';\nimport { describe, beforeEach, it, expect, vi } from 'vitest';\n\ndescribe('EventsService', () => {\n  let eventsService: EventsService;\n  let prismaService: PrismaService;\n\n  // Crear mock sin referencia circular\n  const mockPrismaService: any = {};\n\n  mockPrismaService.event = {\n    findMany: vi.fn(),\n    findUnique: vi.fn(),\n    create: vi.fn(),\n    update: vi.fn(),\n    delete: vi.fn(),\n    count: vi.fn(),\n  };\n\n  mockPrismaService.user = {\n    findUnique: vi.fn(),\n  };\n\n  mockPrismaService.venue = {\n    findUnique: vi.fn(),\n  };\n\n  mockPrismaService.$transaction = vi.fn((fn) => fn(mockPrismaService));\n  mockPrismaService.$connect = vi.fn();\n  mockPrismaService.$disconnect = vi.fn();\n  mockPrismaService.$on = vi.fn();\n  mockPrismaService.$use = vi.fn();\n\n  beforeEach(async () => {\n    // En lugar de usar TestingModule, instanciar manualmente\n    eventsService = new EventsService(mockPrismaService as any);\n    prismaService = mockPrismaService as any;\n\n    vi.clearAllMocks();\n  });\n\n  describe('findAll', () => {\n    it('deberÃ­a retornar una lista de eventos', async () => {\n      const mockEvents = [\n        {\n          id: 'event-1',\n          name: 'Evento 1',\n          description: 'DescripciÃ³n 1',\n          coverPrice: 50.0,\n          capacity: 100,\n          status: EventStatus.DRAFT,\n          venueId: 'venue-1',\n          createdById: 'user-1',\n          startsAt: new Date(),\n          endsAt: new Date(),\n        },\n        {\n          id: 'event-2',\n          name: 'Evento 2',\n          description: 'DescripciÃ³n 2',\n          coverPrice: 75.0,\n          capacity: 200,\n          status: EventStatus.PUBLISHED,\n          venueId: 'venue-2',\n          createdById: 'user-2',\n          startsAt: new Date(),\n          endsAt: new Date(),\n        },\n      ];\n\n      mockPrismaService.event.findMany.mockResolvedValue(mockEvents);\n      mockPrismaService.event.count.mockResolvedValue(2);\n\n      const query = { page: 1, limit: 10 };\n      const result = await eventsService.findAll(query);\n\n      expect(mockPrismaService.event.findMany).toHaveBeenCalled();\n      expect(mockPrismaService.event.count).toHaveBeenCalled();\n      expect(result).toEqual({\n        data: mockEvents,\n        meta: {\n          total: 2,\n          page: 1,\n          limit: 10,\n          totalPages: 1,\n        },\n      });\n    });\n\n    it('deberÃ­a filtrar eventos por venueId si se proporciona', async () => {\n      const mockEvents = [\n        {\n          id: 'event-1',\n          name: 'Evento 1',\n          venueId: 'venue-1',\n        },\n      ];\n\n      mockPrismaService.event.findMany.mockResolvedValue(mockEvents);\n      mockPrismaService.event.count.mockResolvedValue(1);\n\n      const query = { page: 1, limit: 10, venueId: 'venue-1' };\n      const result = await eventsService.findAll(query);\n\n      expect(mockPrismaService.event.findMany).toHaveBeenCalled();\n      expect(mockPrismaService.event.count).toHaveBeenCalled();\n      expect(result.data).toEqual(mockEvents);\n    });\n  });\n\n  describe('findOne', () => {\n    it('deberÃ­a retornar un evento por ID', async () => {\n      const mockEvent = {\n        id: 'event-1',\n        name: 'Evento Test',\n        description: 'DescripciÃ³n test',\n        coverPrice: 50.0,\n        capacity: 100,\n        status: EventStatus.DRAFT,\n        venueId: 'venue-1',\n        createdById: 'user-1',\n        startsAt: new Date(),\n        endsAt: new Date(),\n        venue: {\n          id: 'venue-1',\n          name: 'Venue Test',\n          city: 'Ciudad',\n          address: 'DirecciÃ³n',\n          capacity: 500,\n          coverImageUrl: 'https://example.com/image.jpg',\n          owner: {\n            id: 'owner-1',\n            name: 'DueÃ±o',\n            email: 'owner@example.com',\n          },\n        },\n        promotions: [],\n      };\n\n      mockPrismaService.event.findUnique.mockResolvedValue(mockEvent);\n\n      const result = await eventsService.findOne('event-1');\n\n      expect(mockPrismaService.event.findUnique).toHaveBeenCalledWith({\n        where: { id: 'event-1' },\n        include: {\n          venue: {\n            select: {\n              id: true,\n              name: true,\n              city: true,\n              address: true,\n              capacity: true,\n              coverImageUrl: true,\n              owner: {\n                select: {\n                  id: true,\n                  name: true,\n                  email: true,\n                },\n              },\n            },\n          },\n          promotions: {\n            where: {\n              isActive: true,\n              validUntil: { gte: expect.any(Date) },\n            },\n            orderBy: { discountValue: 'desc' },\n          },\n        },\n      });\n      expect(result).toEqual(mockEvent);\n    });\n\n    it('deberÃ­a lanzar NotFoundException si el evento no existe', async () => {\n      mockPrismaService.event.findUnique.mockResolvedValue(null);\n\n      await expect(eventsService.findOne('non-existent-id')).rejects.toThrow(\n        NotFoundException,\n      );\n      await expect(eventsService.findOne('non-existent-id')).rejects.toThrow(\n        `Evento con ID non-existent-id no encontrado`,\n      );\n    });\n  });\n\n  describe('create', () => {\n    it('deberÃ­a crear un evento exitosamente', async () => {\n      const createEventDto: CreateEventDto = {\n        name: 'Nuevo Evento',\n        description: 'DescripciÃ³n del nuevo evento',\n        venueId: 'venue-1',\n        date: '2024-12-31T20:00:00Z',\n        doorsOpen: '2024-12-31T19:00:00Z',\n        coverPrice: 60.0,\n        maxCapacity: 150,\n        musicGenre: 'Rock',\n      };\n\n      const mockVenue = {\n        id: 'venue-1',\n        ownerId: 'user-1', // Mismo usuario que crea el evento\n      };\n\n      const mockEvent = {\n        id: 'new-event-id',\n        name: createEventDto.name,\n        description: createEventDto.description,\n        venueId: createEventDto.venueId,\n        date: createEventDto.date,\n        doorsOpen: createEventDto.doorsOpen,\n        coverPrice: createEventDto.coverPrice,\n        maxCapacity: createEventDto.maxCapacity,\n        musicGenre: createEventDto.musicGenre,\n        status: EventStatus.DRAFT,\n        createdById: 'user-1',\n      };\n\n      mockPrismaService.venue.findUnique.mockResolvedValue(mockVenue);\n      mockPrismaService.event.create.mockResolvedValue(mockEvent);\n\n      const result = await eventsService.create(createEventDto, 'user-1');\n\n      expect(mockPrismaService.venue.findUnique).toHaveBeenCalledWith({\n        where: { id: createEventDto.venueId },\n        select: { ownerId: true },\n      });\n      expect(mockPrismaService.event.create).toHaveBeenCalledWith({\n        data: expect.objectContaining({\n          name: createEventDto.name,\n          description: createEventDto.description,\n          venueId: createEventDto.venueId,\n          date: new Date(createEventDto.date),\n          doorsOpen: new Date(createEventDto.doorsOpen),\n          coverPrice: createEventDto.coverPrice,\n          maxCapacity: createEventDto.maxCapacity,\n          musicGenre: createEventDto.musicGenre,\n          ticketsSold: 0,\n        }),\n        include: { venue: true },\n      });\n      expect(result).toEqual(mockEvent);\n    });\n\n    it('deberÃ­a lanzar NotFoundException si el venue no existe', async () => {\n      const createEventDto: CreateEventDto = {\n        name: 'Nuevo Evento',\n        description: 'DescripciÃ³n',\n        venueId: 'non-existent-venue',\n        date: '2024-12-31T20:00:00Z',\n        doorsOpen: '2024-12-31T19:00:00Z',\n        coverPrice: 50.0,\n        maxCapacity: 100,\n        musicGenre: 'Rock',\n      };\n\n      const mockUser = {\n        id: 'user-1',\n        role: UserRole.ADMIN_VENUE,\n      };\n\n      mockPrismaService.user.findUnique.mockResolvedValue(mockUser);\n      mockPrismaService.venue.findUnique.mockResolvedValue(null);\n\n      await expect(\n        eventsService.create(createEventDto, 'user-1'),\n      ).rejects.toThrow(NotFoundException);\n      await expect(\n        eventsService.create(createEventDto, 'user-1'),\n      ).rejects.toThrow('Venue con ID non-existent-venue no encontrado');\n    });\n\n    it('deberÃ­a lanzar ForbiddenException si el usuario no es admin del venue', async () => {\n      const createEventDto: CreateEventDto = {\n        name: 'Nuevo Evento',\n        description: 'DescripciÃ³n',\n        venueId: 'venue-1',\n        date: '2024-12-31T20:00:00Z',\n        doorsOpen: '2024-12-31T19:00:00Z',\n        coverPrice: 50.0,\n        maxCapacity: 100,\n        musicGenre: 'Rock',\n      };\n\n      const mockUser = {\n        id: 'user-1',\n        role: UserRole.ADMIN_VENUE,\n      };\n\n      const mockVenue = {\n        id: 'venue-1',\n        ownerId: 'different-user-id', // Diferente usuario\n      };\n\n      mockPrismaService.user.findUnique.mockResolvedValue(mockUser);\n      mockPrismaService.venue.findUnique.mockResolvedValue(mockVenue);\n\n      await expect(\n        eventsService.create(createEventDto, 'user-1'),\n      ).rejects.toThrow(ForbiddenException);\n      await expect(\n        eventsService.create(createEventDto, 'user-1'),\n      ).rejects.toThrow('No eres el dueÃ±o de este venue');\n    });\n  });\n\n  describe('update', () => {\n    it('deberÃ­a actualizar un evento exitosamente', async () => {\n      const updateEventDto: UpdateEventDto = {\n        name: 'Evento Actualizado',\n        description: 'DescripciÃ³n actualizada',\n      };\n\n      const mockEvent = {\n        id: 'event-1',\n        name: 'Evento Original',\n        description: 'DescripciÃ³n original',\n        venueId: 'venue-1',\n        createdById: 'user-1',\n        ticketsSold: 0,\n        venue: {\n          ownerId: 'user-1', // Mismo usuario\n        },\n      };\n\n      const mockUpdatedEvent = {\n        ...mockEvent,\n        ...updateEventDto,\n      };\n\n      mockPrismaService.event.findUnique.mockResolvedValue(mockEvent);\n      mockPrismaService.event.update.mockResolvedValue(mockUpdatedEvent);\n\n      const result = await eventsService.update(\n        'event-1',\n        updateEventDto,\n        'user-1',\n      );\n\n      expect(mockPrismaService.event.findUnique).toHaveBeenCalledWith({\n        where: { id: 'event-1' },\n        include: {\n          venue: {\n            select: {\n              ownerId: true,\n            },\n          },\n        },\n      });\n      expect(mockPrismaService.event.update).toHaveBeenCalledWith({\n        where: { id: 'event-1' },\n        data: updateEventDto,\n        include: {\n          venue: true,\n        },\n      });\n      expect(result).toEqual(mockUpdatedEvent);\n    });\n\n    it('deberÃ­a lanzar NotFoundException si el evento no existe', async () => {\n      const updateEventDto: UpdateEventDto = {\n        name: 'Evento Actualizado',\n      };\n\n      mockPrismaService.event.findUnique.mockResolvedValue(null);\n\n      await expect(\n        eventsService.update('non-existent-id', updateEventDto, 'user-1'),\n      ).rejects.toThrow(NotFoundException);\n      await expect(\n        eventsService.update('non-existent-id', updateEventDto, 'user-1'),\n      ).rejects.toThrow('Evento con ID non-existent-id no encontrado');\n    });\n  });\n\n  describe('remove', () => {\n    it('deberÃ­a eliminar un evento exitosamente', async () => {\n      const mockEvent = {\n        id: 'event-1',\n        name: 'Evento a eliminar',\n        venueId: 'venue-1',\n        createdById: 'user-1',\n        ticketsSold: 0,\n        venue: {\n          ownerId: 'user-1', // Mismo usuario\n        },\n      };\n\n      mockPrismaService.event.findUnique.mockResolvedValue(mockEvent);\n      mockPrismaService.event.delete.mockResolvedValue(mockEvent);\n\n      const result = await eventsService.remove('event-1', 'user-1');\n\n      expect(mockPrismaService.event.findUnique).toHaveBeenCalledWith({\n        where: { id: 'event-1' },\n        include: {\n          venue: {\n            select: {\n              ownerId: true,\n            },\n          },\n        },\n      });\n      expect(mockPrismaService.event.delete).toHaveBeenCalledWith({\n        where: { id: 'event-1' },\n      });\n      expect(result).toEqual(mockEvent);\n    });\n\n    it('deberÃ­a lanzar ForbiddenException si el usuario no es admin del venue', async () => {\n      const mockEvent = {\n        id: 'event-1',\n        name: 'Evento',\n        venueId: 'venue-1',\n        createdById: 'different-user-id', // Diferente usuario\n        venue: {\n          ownerId: 'different-user-id', // Diferente usuario\n        },\n      };\n\n      const mockUser = {\n        id: 'user-1',\n        role: UserRole.ADMIN_VENUE,\n      };\n\n      mockPrismaService.event.findUnique.mockResolvedValue(mockEvent);\n      mockPrismaService.user.findUnique.mockResolvedValue(mockUser);\n\n      await expect(eventsService.remove('event-1', 'user-1')).rejects.toThrow(\n        ForbiddenException,\n      );\n      await expect(eventsService.remove('event-1', 'user-1')).rejects.toThrow(\n        'No tienes permiso para eliminar este evento',\n      );\n    });\n  });\n});\n",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Nightpass-sc\\apps\\api\\src\\modules\\events\\dto\\create-event.dto.ts",
+    "messages": [
+      {
+        "ruleId": "@typescript-eslint/no-unused-vars",
+        "severity": 1,
+        "message": "'Max' is defined but never used.",
+        "line": 10,
+        "column": 3,
+        "nodeType": null,
+        "messageId": "unusedVar",
+        "endLine": 10,
+        "endColumn": 6
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 1,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "import { ApiProperty } from '@nestjs/swagger';\nimport {\n  IsString,\n  IsInt,\n  IsOptional,\n  IsDecimal,\n  IsDateString,\n  IsEnum,\n  Min,\n  Max,\n} from 'class-validator';\nimport { Transform } from 'class-transformer';\nimport { EventStatus } from '../../../shared/enums';\nimport { IsBefore } from '../../../shared/validators/is-before.validator';\n\nexport class CreateEventDto {\n  @ApiProperty({\n    example: 'Concierto de Rock',\n    description: 'Nombre del evento',\n  })\n  @IsString()\n  name!: string;\n\n  @ApiProperty({ example: 'Un concierto increÃ­ble', required: false })\n  @IsOptional()\n  @IsString()\n  description?: string;\n\n  @ApiProperty({\n    example: '2024-12-31T20:00:00Z',\n    description: 'Fecha y hora del evento',\n  })\n  @IsDateString()\n  date!: string;\n\n  @ApiProperty({\n    example: '2024-12-31T19:00:00Z',\n    description: 'Fecha y hora de apertura de puertas',\n  })\n  @IsDateString()\n  @IsBefore('date')\n  doorsOpen!: string;\n\n  @ApiProperty({ example: 50.0, description: 'Precio de entrada' })\n  @Transform(({ value }) => parseFloat(value))\n  @IsDecimal({ decimal_digits: '2' })\n  @Min(0)\n  coverPrice!: number;\n\n  @ApiProperty({ example: 1000, description: 'Capacidad mÃ¡xima' })\n  @IsInt()\n  @Min(1)\n  maxCapacity!: number;\n\n  @ApiProperty({ example: 'Rock', description: 'GÃ©nero musical' })\n  @IsString()\n  musicGenre!: string;\n\n  @ApiProperty({ example: 'https://example.com/banner.jpg', required: false })\n  @IsOptional()\n  @IsString()\n  bannerImageUrl?: string;\n\n  @ApiProperty({\n    example: 'DRAFT',\n    enum: EventStatus,\n    default: EventStatus.DRAFT,\n  })\n  @IsOptional()\n  @IsEnum(EventStatus)\n  status?: EventStatus = EventStatus.DRAFT;\n\n  @ApiProperty({\n    example: 'venue-id-uuid',\n    description: 'ID del venue donde se realiza el evento',\n  })\n  @IsString()\n  venueId!: string;\n}\n",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Nightpass-sc\\apps\\api\\src\\modules\\events\\dto\\event-query.dto.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Nightpass-sc\\apps\\api\\src\\modules\\events\\dto\\update-event.dto.ts",
+    "messages": [
+      {
+        "ruleId": "@typescript-eslint/no-unused-vars",
+        "severity": 1,
+        "message": "'ApiProperty' is defined but never used.",
+        "line": 1,
+        "column": 10,
+        "nodeType": null,
+        "messageId": "unusedVar",
+        "endLine": 1,
+        "endColumn": 21
+      },
+      {
+        "ruleId": "@typescript-eslint/no-unused-vars",
+        "severity": 1,
+        "message": "'IsString' is defined but never used.",
+        "line": 3,
+        "column": 3,
+        "nodeType": null,
+        "messageId": "unusedVar",
+        "endLine": 3,
+        "endColumn": 11
+      },
+      {
+        "ruleId": "@typescript-eslint/no-unused-vars",
+        "severity": 1,
+        "message": "'IsDecimal' is defined but never used.",
+        "line": 6,
+        "column": 3,
+        "nodeType": null,
+        "messageId": "unusedVar",
+        "endLine": 6,
+        "endColumn": 12
+      },
+      {
+        "ruleId": "@typescript-eslint/no-unused-vars",
+        "severity": 1,
+        "message": "'IsDateString' is defined but never used.",
+        "line": 7,
+        "column": 3,
+        "nodeType": null,
+        "messageId": "unusedVar",
+        "endLine": 7,
+        "endColumn": 15
+      },
+      {
+        "ruleId": "@typescript-eslint/no-unused-vars",
+        "severity": 1,
+        "message": "'IsEnum' is defined but never used.",
+        "line": 8,
+        "column": 3,
+        "nodeType": null,
+        "messageId": "unusedVar",
+        "endLine": 8,
+        "endColumn": 9
+      },
+      {
+        "ruleId": "@typescript-eslint/no-unused-vars",
+        "severity": 1,
+        "message": "'Transform' is defined but never used.",
+        "line": 11,
+        "column": 10,
+        "nodeType": null,
+        "messageId": "unusedVar",
+        "endLine": 11,
+        "endColumn": 19
+      },
+      {
+        "ruleId": "@typescript-eslint/no-unused-vars",
+        "severity": 1,
+        "message": "'EventStatus' is defined but never used.",
+        "line": 12,
+        "column": 10,
+        "nodeType": null,
+        "messageId": "unusedVar",
+        "endLine": 12,
+        "endColumn": 21
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 7,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "import { ApiProperty } from '@nestjs/swagger';\nimport {\n  IsString,\n  IsInt,\n  IsOptional,\n  IsDecimal,\n  IsDateString,\n  IsEnum,\n  Min,\n} from 'class-validator';\nimport { Transform } from 'class-transformer';\nimport { EventStatus } from '../../../shared/enums';\nimport { PartialType } from '@nestjs/swagger';\nimport { CreateEventDto } from './create-event.dto';\n\nexport class UpdateEventDto extends PartialType(CreateEventDto) {\n  // No permitir actualizar ticketsSold directamente\n  @IsOptional()\n  @IsInt()\n  @Min(0)\n  ticketsSold?: number;\n}\n",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Nightpass-sc\\apps\\api\\src\\modules\\events\\events.controller.ts",
+    "messages": [
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 1,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 64,
+        "column": 26,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 64,
+        "endColumn": 29,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": { "range": [1929, 1932], "text": "unknown" },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": { "range": [1929, 1932], "text": "never" },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ]
+      },
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 1,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 79,
+        "column": 26,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 79,
+        "endColumn": 29,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": { "range": [2458, 2461], "text": "unknown" },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": { "range": [2458, 2461], "text": "never" },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ]
+      },
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 1,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 95,
+        "column": 63,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 95,
+        "endColumn": 66,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": { "range": [3075, 3078], "text": "unknown" },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": { "range": [3075, 3078], "text": "never" },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ]
+      },
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 1,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 107,
+        "column": 62,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 107,
+        "endColumn": 65,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": { "range": [3559, 3562], "text": "unknown" },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": { "range": [3559, 3562], "text": "never" },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ]
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 4,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "import {\n  Controller,\n  Get,\n  Post,\n  Patch,\n  Delete,\n  Body,\n  Param,\n  Query,\n  UseGuards,\n  HttpCode,\n  HttpStatus,\n} from '@nestjs/common';\nimport {\n  ApiTags,\n  ApiOperation,\n  ApiResponse,\n  ApiBearerAuth,\n} from '@nestjs/swagger';\nimport { EventsService } from './events.service';\nimport { CreateEventDto } from './dto/create-event.dto';\nimport { UpdateEventDto } from './dto/update-event.dto';\nimport { EventQueryDto } from './dto/event-query.dto';\nimport { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';\nimport { RolesGuard } from '../auth/guards/roles.guard';\nimport { Roles } from '../auth/decorators/roles.decorator';\nimport { UserRole } from '../../shared/enums';\nimport { CurrentUser } from '../../shared/decorators/current-user.decorator';\n\n@ApiTags('events')\n@Controller('events')\nexport class EventsController {\n  constructor(private readonly eventsService: EventsService) {}\n\n  @Get()\n  @ApiOperation({\n    summary:\n      'Obtener lista de eventos con filtros y paginaciÃ³n (solo PUBLISHED)',\n  })\n  @ApiResponse({ status: 200, description: 'Lista de eventos' })\n  async findAll(@Query() query: EventQueryDto) {\n    return this.eventsService.findAll(query);\n  }\n\n  @Get(':id')\n  @ApiOperation({ summary: 'Obtener un evento por ID con promociones activas' })\n  @ApiResponse({ status: 200, description: 'Detalle del evento' })\n  @ApiResponse({ status: 404, description: 'Evento no encontrado' })\n  async findOne(@Param('id') id: string) {\n    return this.eventsService.findOne(id);\n  }\n\n  @Post()\n  @UseGuards(JwtAuthGuard, RolesGuard)\n  @Roles(UserRole.ADMIN_VENUE)\n  @ApiBearerAuth()\n  @ApiOperation({\n    summary: 'Crear un nuevo evento (solo ADMIN_VENUE, inicia en DRAFT)',\n  })\n  @ApiResponse({ status: 201, description: 'Evento creado exitosamente' })\n  @ApiResponse({ status: 403, description: 'No autorizado' })\n  async create(\n    @Body() createEventDto: CreateEventDto,\n    @CurrentUser() user: any,\n  ) {\n    return this.eventsService.create(createEventDto, user.id);\n  }\n\n  @Patch(':id')\n  @UseGuards(JwtAuthGuard)\n  @ApiBearerAuth()\n  @ApiOperation({ summary: 'Actualizar un evento (solo dueÃ±o del venue)' })\n  @ApiResponse({ status: 200, description: 'Evento actualizado' })\n  @ApiResponse({ status: 403, description: 'No autorizado' })\n  @ApiResponse({ status: 404, description: 'Evento no encontrado' })\n  async update(\n    @Param('id') id: string,\n    @Body() updateEventDto: UpdateEventDto,\n    @CurrentUser() user: any,\n  ) {\n    return this.eventsService.update(id, updateEventDto, user.id);\n  }\n\n  @Patch(':id/publish')\n  @UseGuards(JwtAuthGuard)\n  @ApiBearerAuth()\n  @ApiOperation({\n    summary:\n      'Publicar un evento (cambiar status a PUBLISHED) con validaciÃ³n de campos obligatorios',\n  })\n  @ApiResponse({ status: 200, description: 'Evento publicado' })\n  @ApiResponse({ status: 400, description: 'Faltan campos obligatorios' })\n  @ApiResponse({ status: 403, description: 'No autorizado' })\n  @ApiResponse({ status: 404, description: 'Evento no encontrado' })\n  async publish(@Param('id') id: string, @CurrentUser() user: any) {\n    return this.eventsService.publish(id, user.id);\n  }\n\n  @Delete(':id')\n  @UseGuards(JwtAuthGuard)\n  @ApiBearerAuth()\n  @HttpCode(HttpStatus.NO_CONTENT)\n  @ApiOperation({ summary: 'Eliminar un evento (soft delete)' })\n  @ApiResponse({ status: 204, description: 'Evento eliminado' })\n  @ApiResponse({ status: 403, description: 'No autorizado' })\n  @ApiResponse({ status: 404, description: 'Evento no encontrado' })\n  async remove(@Param('id') id: string, @CurrentUser() user: any) {\n    return this.eventsService.remove(id, user.id);\n  }\n}\n",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Nightpass-sc\\apps\\api\\src\\modules\\events\\events.module.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Nightpass-sc\\apps\\api\\src\\modules\\events\\events.service.ts",
+    "messages": [
+      {
+        "ruleId": "@typescript-eslint/no-unused-vars",
+        "severity": 1,
+        "message": "'UserRole' is defined but never used.",
+        "line": 11,
+        "column": 10,
+        "nodeType": null,
+        "messageId": "unusedVar",
+        "endLine": 11,
+        "endColumn": 18
+      },
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 1,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 24,
+        "column": 18,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 24,
+        "endColumn": 21,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": { "range": [767, 770], "text": "unknown" },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": { "range": [767, 770], "text": "never" },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ]
+      },
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 1,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 200,
+        "column": 17,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 200,
+        "endColumn": 20,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": { "range": [5061, 5064], "text": "unknown" },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": { "range": [5061, 5064], "text": "never" },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ]
+      },
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 1,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 248,
+        "column": 29,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 248,
+        "endColumn": 32,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": { "range": [6214, 6217], "text": "unknown" },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": { "range": [6214, 6217], "text": "never" },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ]
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 4,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "import {\n  Injectable,\n  NotFoundException,\n  ForbiddenException,\n  BadRequestException,\n} from '@nestjs/common';\nimport { PrismaService } from '../../shared/prisma/prisma.service';\nimport { CreateEventDto } from './dto/create-event.dto';\nimport { UpdateEventDto } from './dto/update-event.dto';\nimport { EventQueryDto } from './dto/event-query.dto';\nimport { UserRole, EventStatus } from '../../shared/enums';\n\n@Injectable()\nexport class EventsService {\n  constructor(private readonly prisma: PrismaService) {}\n\n  /**\n   * Obtiene lista de eventos con filtros y paginaciÃ³n (solo PUBLISHED)\n   */\n  async findAll(query: EventQueryDto) {\n    const { city, genre, dateFrom, dateTo, page = 1, limit = 20 } = query;\n    const skip = (page - 1) * limit;\n\n    const where: any = {\n      status: EventStatus.PUBLISHED,\n    };\n\n    if (city || genre) {\n      where.venue = {};\n      if (city) {\n        where.venue.city = { contains: city, mode: 'insensitive' };\n      }\n      if (genre) {\n        where.musicGenre = { contains: genre, mode: 'insensitive' };\n      }\n    }\n\n    if (dateFrom || dateTo) {\n      where.date = {};\n      if (dateFrom) {\n        where.date.gte = new Date(dateFrom);\n      }\n      if (dateTo) {\n        where.date.lte = new Date(dateTo);\n      }\n    }\n\n    const [events, total] = await Promise.all([\n      this.prisma.event.findMany({\n        where,\n        skip,\n        take: limit,\n        include: {\n          venue: {\n            select: {\n              id: true,\n              name: true,\n              city: true,\n              address: true,\n              coverImageUrl: true,\n            },\n          },\n          promotions: {\n            where: {\n              isActive: true,\n              validUntil: { gte: new Date() },\n            },\n            take: 3,\n          },\n        },\n        orderBy: { date: 'asc' },\n      }),\n      this.prisma.event.count({ where }),\n    ]);\n\n    return {\n      data: events,\n      meta: {\n        total,\n        page,\n        limit,\n        totalPages: Math.ceil(total / limit),\n      },\n    };\n  }\n\n  /**\n   * Obtiene un evento por ID incluyendo promociones activas\n   */\n  async findOne(id: string) {\n    const event = await this.prisma.event.findUnique({\n      where: { id },\n      include: {\n        venue: {\n          select: {\n            id: true,\n            name: true,\n            city: true,\n            address: true,\n            capacity: true,\n            coverImageUrl: true,\n            owner: {\n              select: {\n                id: true,\n                name: true,\n                email: true,\n              },\n            },\n          },\n        },\n        promotions: {\n          where: {\n            isActive: true,\n            validUntil: { gte: new Date() },\n          },\n          orderBy: { discountValue: 'desc' },\n        },\n      },\n    });\n\n    if (!event) {\n      throw new NotFoundException(`Evento con ID ${id} no encontrado`);\n    }\n\n    return event;\n  }\n\n  /**\n   * Crea un nuevo evento (solo ADMIN_VENUE, inicia en DRAFT)\n   */\n  async create(createEventDto: CreateEventDto, userId: string) {\n    // Verificar que el usuario es ADMIN_VENUE y dueÃ±o del venue\n    const venue = await this.prisma.venue.findUnique({\n      where: { id: createEventDto.venueId },\n      select: { ownerId: true },\n    });\n\n    if (!venue) {\n      throw new NotFoundException(\n        `Venue con ID ${createEventDto.venueId} no encontrado`,\n      );\n    }\n\n    if (venue.ownerId !== userId) {\n      throw new ForbiddenException('No eres el dueÃ±o de este venue');\n    }\n\n    // Crear evento\n    return this.prisma.event.create({\n      data: {\n        ...createEventDto,\n        date: new Date(createEventDto.date),\n        doorsOpen: new Date(createEventDto.doorsOpen),\n        ticketsSold: 0,\n      },\n      include: {\n        venue: true,\n      },\n    });\n  }\n\n  /**\n   * Actualiza un evento (solo dueÃ±o del venue)\n   */\n  async update(id: string, updateEventDto: UpdateEventDto, userId: string) {\n    // Verificar que el evento existe y pertenece al usuario\n    const event = await this.prisma.event.findUnique({\n      where: { id },\n      include: {\n        venue: {\n          select: { ownerId: true },\n        },\n      },\n    });\n\n    if (!event) {\n      throw new NotFoundException(`Evento con ID ${id} no encontrado`);\n    }\n\n    if (event.venue.ownerId !== userId) {\n      throw new ForbiddenException('No tienes permiso para editar este evento');\n    }\n\n    // RN-10: No editar coverPrice/maxCapacity con tickets vendidos\n    if (updateEventDto.coverPrice !== undefined && event.ticketsSold > 0) {\n      throw new BadRequestException(\n        'No se puede modificar el precio de entrada cuando ya hay tickets vendidos',\n      );\n    }\n\n    if (updateEventDto.maxCapacity !== undefined && event.ticketsSold > 0) {\n      if (updateEventDto.maxCapacity < event.ticketsSold) {\n        throw new BadRequestException(\n          'La nueva capacidad no puede ser menor a los tickets ya vendidos',\n        );\n      }\n    }\n\n    // Convertir fechas si vienen\n    const data: any = { ...updateEventDto };\n    if (data.date) data.date = new Date(data.date);\n    if (data.doorsOpen) data.doorsOpen = new Date(data.doorsOpen);\n\n    return this.prisma.event.update({\n      where: { id },\n      data,\n      include: {\n        venue: true,\n      },\n    });\n  }\n\n  /**\n   * Publicar un evento (cambiar status a PUBLISHED) con validaciÃ³n de campos obligatorios\n   */\n  async publish(id: string, userId: string) {\n    const event = await this.prisma.event.findUnique({\n      where: { id },\n      include: {\n        venue: {\n          select: { ownerId: true },\n        },\n      },\n    });\n\n    if (!event) {\n      throw new NotFoundException(`Evento con ID ${id} no encontrado`);\n    }\n\n    if (event.venue.ownerId !== userId) {\n      throw new ForbiddenException(\n        'No tienes permiso para publicar este evento',\n      );\n    }\n\n    // RN-12: Validar campos obligatorios para publicar\n    const requiredFields = [\n      'name',\n      'date',\n      'doorsOpen',\n      'coverPrice',\n      'maxCapacity',\n      'musicGenre',\n      'bannerImageUrl',\n    ];\n\n    const missingFields = requiredFields.filter(\n      (field) => !(event as any)[field],\n    );\n    if (missingFields.length > 0) {\n      throw new BadRequestException(\n        `Faltan campos obligatorios para publicar: ${missingFields.join(', ')}`,\n      );\n    }\n\n    // Verificar que la fecha sea futura\n    if (new Date(event.date) <= new Date()) {\n      throw new BadRequestException('La fecha del evento debe ser futura');\n    }\n\n    // Verificar que doorsOpen sea anterior a date\n    if (new Date(event.doorsOpen) >= new Date(event.date)) {\n      throw new BadRequestException(\n        'La apertura de puertas debe ser anterior a la fecha del evento',\n      );\n    }\n\n    return this.prisma.event.update({\n      where: { id },\n      data: { status: EventStatus.PUBLISHED },\n      include: {\n        venue: true,\n      },\n    });\n  }\n\n  /**\n   * Elimina un evento (soft delete)\n   */\n  async remove(id: string, userId: string) {\n    const event = await this.prisma.event.findUnique({\n      where: { id },\n      include: {\n        venue: {\n          select: { ownerId: true },\n        },\n      },\n    });\n\n    if (!event) {\n      throw new NotFoundException(`Evento con ID ${id} no encontrado`);\n    }\n\n    if (event.venue.ownerId !== userId) {\n      throw new ForbiddenException(\n        'No tienes permiso para eliminar este evento',\n      );\n    }\n\n    // Si ya hay tickets vendidos, no se puede eliminar, solo cancelar\n    if (event.ticketsSold > 0) {\n      return this.prisma.event.update({\n        where: { id },\n        data: { status: EventStatus.CANCELLED },\n      });\n    }\n\n    return this.prisma.event.delete({\n      where: { id },\n    });\n  }\n}\n",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Nightpass-sc\\apps\\api\\src\\modules\\venues\\dto\\create-venue.dto.ts",
+    "messages": [
+      {
+        "ruleId": "@typescript-eslint/no-unused-vars",
+        "severity": 1,
+        "message": "'Max' is defined but never used.",
+        "line": 9,
+        "column": 3,
+        "nodeType": null,
+        "messageId": "unusedVar",
+        "endLine": 9,
+        "endColumn": 6
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 1,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "import { ApiProperty } from '@nestjs/swagger';\nimport {\n  IsString,\n  IsInt,\n  IsOptional,\n  IsBoolean,\n  IsUrl,\n  Min,\n  Max,\n} from 'class-validator';\n\nexport class CreateVenueDto {\n  @ApiProperty({ example: 'Teatro Nacional', description: 'Nombre del venue' })\n  @IsString()\n  name!: string;\n\n  @ApiProperty({ example: 'BogotÃ¡', description: 'Ciudad donde se encuentra' })\n  @IsString()\n  city!: string;\n\n  @ApiProperty({\n    example: 'Calle 123 #45-67',\n    description: 'DirecciÃ³n completa',\n  })\n  @IsString()\n  address!: string;\n\n  @ApiProperty({ example: 500, description: 'Capacidad mÃ¡xima de personas' })\n  @IsInt()\n  @Min(1)\n  capacity!: number;\n\n  @ApiProperty({\n    example: 'Un teatro histÃ³rico con excelente acÃºstica',\n    required: false,\n  })\n  @IsOptional()\n  @IsString()\n  description?: string;\n\n  @ApiProperty({ example: 'https://example.com/cover.jpg', required: false })\n  @IsOptional()\n  @IsUrl()\n  coverImageUrl?: string;\n\n  @ApiProperty({ example: true, required: false, default: true })\n  @IsOptional()\n  @IsBoolean()\n  isActive?: boolean;\n}\n",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Nightpass-sc\\apps\\api\\src\\modules\\venues\\dto\\update-venue.dto.ts",
+    "messages": [
+      {
+        "ruleId": "@typescript-eslint/no-unused-vars",
+        "severity": 1,
+        "message": "'ApiProperty' is defined but never used.",
+        "line": 1,
+        "column": 10,
+        "nodeType": null,
+        "messageId": "unusedVar",
+        "endLine": 1,
+        "endColumn": 21
+      },
+      {
+        "ruleId": "@typescript-eslint/no-unused-vars",
+        "severity": 1,
+        "message": "'IsString' is defined but never used.",
+        "line": 3,
+        "column": 3,
+        "nodeType": null,
+        "messageId": "unusedVar",
+        "endLine": 3,
+        "endColumn": 11
+      },
+      {
+        "ruleId": "@typescript-eslint/no-unused-vars",
+        "severity": 1,
+        "message": "'IsInt' is defined but never used.",
+        "line": 4,
+        "column": 3,
+        "nodeType": null,
+        "messageId": "unusedVar",
+        "endLine": 4,
+        "endColumn": 8
+      },
+      {
+        "ruleId": "@typescript-eslint/no-unused-vars",
+        "severity": 1,
+        "message": "'IsOptional' is defined but never used.",
+        "line": 5,
+        "column": 3,
+        "nodeType": null,
+        "messageId": "unusedVar",
+        "endLine": 5,
+        "endColumn": 13
+      },
+      {
+        "ruleId": "@typescript-eslint/no-unused-vars",
+        "severity": 1,
+        "message": "'IsBoolean' is defined but never used.",
+        "line": 6,
+        "column": 3,
+        "nodeType": null,
+        "messageId": "unusedVar",
+        "endLine": 6,
+        "endColumn": 12
+      },
+      {
+        "ruleId": "@typescript-eslint/no-unused-vars",
+        "severity": 1,
+        "message": "'IsUrl' is defined but never used.",
+        "line": 7,
+        "column": 3,
+        "nodeType": null,
+        "messageId": "unusedVar",
+        "endLine": 7,
+        "endColumn": 8
+      },
+      {
+        "ruleId": "@typescript-eslint/no-unused-vars",
+        "severity": 1,
+        "message": "'Min' is defined but never used.",
+        "line": 8,
+        "column": 3,
+        "nodeType": null,
+        "messageId": "unusedVar",
+        "endLine": 8,
+        "endColumn": 6
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 7,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "import { ApiProperty } from '@nestjs/swagger';\nimport {\n  IsString,\n  IsInt,\n  IsOptional,\n  IsBoolean,\n  IsUrl,\n  Min,\n} from 'class-validator';\nimport { PartialType } from '@nestjs/swagger';\nimport { CreateVenueDto } from './create-venue.dto';\n\nexport class UpdateVenueDto extends PartialType(CreateVenueDto) {\n  // Se pueden agregar validaciones adicionales si es necesario\n}\n",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Nightpass-sc\\apps\\api\\src\\modules\\venues\\dto\\venue-query.dto.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Nightpass-sc\\apps\\api\\src\\modules\\venues\\venues.controller.ts",
+    "messages": [
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 1,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 59,
+        "column": 26,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 59,
+        "endColumn": 29,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": { "range": [1865, 1868], "text": "unknown" },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": { "range": [1865, 1868], "text": "never" },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ]
+      },
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 1,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 74,
+        "column": 26,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 74,
+        "endColumn": 29,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": { "range": [2391, 2394], "text": "unknown" },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": { "range": [2391, 2394], "text": "never" },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ]
+      },
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 1,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 87,
+        "column": 62,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 87,
+        "endColumn": 65,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": { "range": [2891, 2894], "text": "unknown" },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": { "range": [2891, 2894], "text": "never" },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ]
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 3,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "import {\n  Controller,\n  Get,\n  Post,\n  Patch,\n  Delete,\n  Body,\n  Param,\n  Query,\n  UseGuards,\n  HttpCode,\n  HttpStatus,\n} from '@nestjs/common';\nimport {\n  ApiTags,\n  ApiOperation,\n  ApiResponse,\n  ApiBearerAuth,\n} from '@nestjs/swagger';\nimport { VenuesService } from './venues.service';\nimport { CreateVenueDto } from './dto/create-venue.dto';\nimport { UpdateVenueDto } from './dto/update-venue.dto';\nimport { VenueQueryDto } from './dto/venue-query.dto';\nimport { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';\nimport { RolesGuard } from '../auth/guards/roles.guard';\nimport { Roles } from '../auth/decorators/roles.decorator';\nimport { UserRole } from '../../shared/enums';\nimport { CurrentUser } from '../../shared/decorators/current-user.decorator';\n\n@ApiTags('venues')\n@Controller('venues')\nexport class VenuesController {\n  constructor(private readonly venuesService: VenuesService) {}\n\n  @Get()\n  @ApiOperation({ summary: 'Obtener lista de venues con filtros y paginaciÃ³n' })\n  @ApiResponse({ status: 200, description: 'Lista de venues' })\n  async findAll(@Query() query: VenueQueryDto) {\n    return this.venuesService.findAll(query);\n  }\n\n  @Get(':id')\n  @ApiOperation({ summary: 'Obtener un venue por ID con eventos prÃ³ximos' })\n  @ApiResponse({ status: 200, description: 'Detalle del venue' })\n  @ApiResponse({ status: 404, description: 'Venue no encontrado' })\n  async findOne(@Param('id') id: string) {\n    return this.venuesService.findOne(id);\n  }\n\n  @Post()\n  @UseGuards(JwtAuthGuard, RolesGuard)\n  @Roles(UserRole.ADMIN_VENUE)\n  @ApiBearerAuth()\n  @ApiOperation({ summary: 'Crear un nuevo venue (solo ADMIN_VENUE)' })\n  @ApiResponse({ status: 201, description: 'Venue creado exitosamente' })\n  @ApiResponse({ status: 403, description: 'No autorizado' })\n  async create(\n    @Body() createVenueDto: CreateVenueDto,\n    @CurrentUser() user: any,\n  ) {\n    return this.venuesService.create(createVenueDto, user.id);\n  }\n\n  @Patch(':id')\n  @UseGuards(JwtAuthGuard)\n  @ApiBearerAuth()\n  @ApiOperation({ summary: 'Actualizar un venue (solo dueÃ±o del venue)' })\n  @ApiResponse({ status: 200, description: 'Venue actualizado' })\n  @ApiResponse({ status: 403, description: 'No autorizado' })\n  @ApiResponse({ status: 404, description: 'Venue no encontrado' })\n  async update(\n    @Param('id') id: string,\n    @Body() updateVenueDto: UpdateVenueDto,\n    @CurrentUser() user: any,\n  ) {\n    return this.venuesService.update(id, updateVenueDto, user.id);\n  }\n\n  @Delete(':id')\n  @UseGuards(JwtAuthGuard)\n  @ApiBearerAuth()\n  @HttpCode(HttpStatus.NO_CONTENT)\n  @ApiOperation({ summary: 'Eliminar un venue (soft delete)' })\n  @ApiResponse({ status: 204, description: 'Venue eliminado' })\n  @ApiResponse({ status: 403, description: 'No autorizado' })\n  @ApiResponse({ status: 404, description: 'Venue no encontrado' })\n  async remove(@Param('id') id: string, @CurrentUser() user: any) {\n    return this.venuesService.remove(id, user.id);\n  }\n}\n",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Nightpass-sc\\apps\\api\\src\\modules\\venues\\venues.module.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Nightpass-sc\\apps\\api\\src\\modules\\venues\\venues.service.ts",
+    "messages": [
+      {
+        "ruleId": "@typescript-eslint/no-unused-vars",
+        "severity": 1,
+        "message": "'BadRequestException' is defined but never used.",
+        "line": 5,
+        "column": 3,
+        "nodeType": null,
+        "messageId": "unusedVar",
+        "endLine": 5,
+        "endColumn": 22
+      },
+      {
+        "ruleId": "@typescript-eslint/no-unused-vars",
+        "severity": 1,
+        "message": "'UserRole' is defined but never used.",
+        "line": 11,
+        "column": 10,
+        "nodeType": null,
+        "messageId": "unusedVar",
+        "endLine": 11,
+        "endColumn": 18
+      },
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 1,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 24,
+        "column": 18,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 24,
+        "endColumn": 21,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": { "range": [711, 714], "text": "unknown" },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": { "range": [711, 714], "text": "never" },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ]
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 3,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "import {\n  Injectable,\n  NotFoundException,\n  ForbiddenException,\n  BadRequestException,\n} from '@nestjs/common';\nimport { PrismaService } from '../../shared/prisma/prisma.service';\nimport { CreateVenueDto } from './dto/create-venue.dto';\nimport { UpdateVenueDto } from './dto/update-venue.dto';\nimport { VenueQueryDto } from './dto/venue-query.dto';\nimport { UserRole } from '../../shared/enums';\n\n@Injectable()\nexport class VenuesService {\n  constructor(private readonly prisma: PrismaService) {}\n\n  /**\n   * Obtiene lista de venues con filtros y paginaciÃ³n\n   */\n  async findAll(query: VenueQueryDto) {\n    const { city, page = 1, limit = 20 } = query;\n    const skip = (page - 1) * limit;\n\n    const where: any = { isActive: true };\n    if (city) {\n      where.city = { contains: city, mode: 'insensitive' };\n    }\n\n    const [venues, total] = await Promise.all([\n      this.prisma.venue.findMany({\n        where,\n        skip,\n        take: limit,\n        include: {\n          owner: {\n            select: {\n              id: true,\n              name: true,\n              email: true,\n            },\n          },\n        },\n        orderBy: { createdAt: 'desc' },\n      }),\n      this.prisma.venue.count({ where }),\n    ]);\n\n    return {\n      data: venues,\n      meta: {\n        total,\n        page,\n        limit,\n        totalPages: Math.ceil(total / limit),\n      },\n    };\n  }\n\n  /**\n   * Obtiene un venue por ID incluyendo eventos prÃ³ximos\n   */\n  async findOne(id: string) {\n    const venue = await this.prisma.venue.findUnique({\n      where: { id, isActive: true },\n      include: {\n        owner: {\n          select: {\n            id: true,\n            name: true,\n            email: true,\n          },\n        },\n        events: {\n          where: {\n            status: 'PUBLISHED',\n            date: { gte: new Date() },\n          },\n          take: 10,\n          orderBy: { date: 'asc' },\n          select: {\n            id: true,\n            name: true,\n            date: true,\n            doorsOpen: true,\n            coverPrice: true,\n            musicGenre: true,\n            bannerImageUrl: true,\n            ticketsSold: true,\n            maxCapacity: true,\n          },\n        },\n      },\n    });\n\n    if (!venue) {\n      throw new NotFoundException(`Venue con ID ${id} no encontrado`);\n    }\n\n    return venue;\n  }\n\n  /**\n   * Crea un nuevo venue (solo ADMIN_VENUE)\n   * Nota: La verificaciÃ³n de rol se hace en el RolesGuard del controlador\n   */\n  async create(createVenueDto: CreateVenueDto, userId: string) {\n    // El guard ya valida que el usuario tiene rol ADMIN_VENUE\n    return this.prisma.venue.create({\n      data: {\n        ...createVenueDto,\n        ownerId: userId,\n      },\n      include: {\n        owner: {\n          select: {\n            id: true,\n            name: true,\n            email: true,\n          },\n        },\n      },\n    });\n  }\n\n  /**\n   * Actualiza un venue (solo dueÃ±o del venue)\n   */\n  async update(id: string, updateVenueDto: UpdateVenueDto, userId: string) {\n    // Verificar que el venue existe y pertenece al usuario\n    const venue = await this.prisma.venue.findUnique({\n      where: { id },\n      select: { ownerId: true },\n    });\n\n    if (!venue) {\n      throw new NotFoundException(`Venue con ID ${id} no encontrado`);\n    }\n\n    if (venue.ownerId !== userId) {\n      throw new ForbiddenException('No tienes permiso para editar este venue');\n    }\n\n    return this.prisma.venue.update({\n      where: { id },\n      data: updateVenueDto,\n      include: {\n        owner: {\n          select: {\n            id: true,\n            name: true,\n            email: true,\n          },\n        },\n      },\n    });\n  }\n\n  /**\n   * Elimina un venue (soft delete)\n   */\n  async remove(id: string, userId: string) {\n    const venue = await this.prisma.venue.findUnique({\n      where: { id },\n      select: { ownerId: true },\n    });\n\n    if (!venue) {\n      throw new NotFoundException(`Venue con ID ${id} no encontrado`);\n    }\n\n    if (venue.ownerId !== userId) {\n      throw new ForbiddenException(\n        'No tienes permiso para eliminar este venue',\n      );\n    }\n\n    return this.prisma.venue.update({\n      where: { id },\n      data: { isActive: false },\n    });\n  }\n}\n",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Nightpass-sc\\apps\\api\\src\\shared\\decorators\\current-user.decorator.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Nightpass-sc\\apps\\api\\src\\shared\\enums\\index.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Nightpass-sc\\apps\\api\\src\\shared\\filters\\http-exception.filter.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Nightpass-sc\\apps\\api\\src\\shared\\interceptors\\decimal.interceptor.ts",
+    "messages": [
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 1,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 16,
+        "column": 71,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 16,
+        "endColumn": 74,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": { "range": [503, 506], "text": "unknown" },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": { "range": [503, 506], "text": "never" },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ]
+      },
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 1,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 23,
+        "column": 35,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 23,
+        "endColumn": 38,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": { "range": [702, 705], "text": "unknown" },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": { "range": [702, 705], "text": "never" },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ]
+      },
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 1,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 23,
+        "column": 41,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 23,
+        "endColumn": 44,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": { "range": [708, 711], "text": "unknown" },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": { "range": [708, 711], "text": "never" },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ]
+      },
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 1,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 41,
+        "column": 26,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 41,
+        "endColumn": 29,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": { "range": [1321, 1324], "text": "unknown" },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": { "range": [1321, 1324], "text": "never" },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ]
+      },
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 1,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 58,
+        "column": 32,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 58,
+        "endColumn": 35,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": { "range": [1783, 1786], "text": "unknown" },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": { "range": [1783, 1786], "text": "never" },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ]
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 5,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "import {\r\n  Injectable,\r\n  NestInterceptor,\r\n  ExecutionContext,\r\n  CallHandler,\r\n} from '@nestjs/common';\r\nimport { Observable } from 'rxjs';\r\nimport { map } from 'rxjs/operators';\r\n\r\n/**\r\n * Interceptor que transforma objetos Decimal de Prisma a nÃºmeros JavaScript.\r\n * Prisma devuelve objetos Decimal que no son serializables directamente a JSON.\r\n */\r\n@Injectable()\r\nexport class DecimalInterceptor implements NestInterceptor {\r\n  intercept(context: ExecutionContext, next: CallHandler): Observable<any> {\r\n    return next.handle().pipe(map((data) => this.transformDecimals(data)));\r\n  }\r\n\r\n  /**\r\n   * Transforma recursivamente objetos Decimal a nÃºmeros.\r\n   */\r\n  private transformDecimals(data: any): any {\r\n    if (data === null || data === undefined) {\r\n      return data;\r\n    }\r\n\r\n    // Si es un objeto Decimal de Prisma\r\n    if (typeof data === 'object' && data !== null) {\r\n      // Verificar si es un objeto Decimal de Prisma (tiene propiedades especÃ­ficas)\r\n      if (this.isPrismaDecimal(data)) {\r\n        return parseFloat(data.toString());\r\n      }\r\n\r\n      // Si es un array, transformar cada elemento\r\n      if (Array.isArray(data)) {\r\n        return data.map((item) => this.transformDecimals(item));\r\n      }\r\n\r\n      // Si es un objeto regular, transformar cada propiedad\r\n      const transformed: any = {};\r\n      for (const key in data) {\r\n        if (Object.prototype.hasOwnProperty.call(data, key)) {\r\n          transformed[key] = this.transformDecimals(data[key]);\r\n        }\r\n      }\r\n      return transformed;\r\n    }\r\n\r\n    // Si no es un objeto, retornar tal cual\r\n    return data;\r\n  }\r\n\r\n  /**\r\n   * Verifica si un objeto es un Decimal de Prisma.\r\n   * Los objetos Decimal de Prisma tienen mÃ©todos especÃ­ficos.\r\n   */\r\n  private isPrismaDecimal(obj: any): boolean {\r\n    return (\r\n      typeof obj === 'object' &&\r\n      obj !== null &&\r\n      typeof obj.toString === 'function' &&\r\n      typeof obj.toNumber === 'function' &&\r\n      typeof obj.toFixed === 'function' &&\r\n      !Array.isArray(obj)\r\n    );\r\n  }\r\n}\r\n",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Nightpass-sc\\apps\\api\\src\\shared\\prisma\\prisma.module.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Nightpass-sc\\apps\\api\\src\\shared\\prisma\\prisma.service.ts",
+    "messages": [
+      {
+        "ruleId": "no-console",
+        "severity": 1,
+        "message": "Unexpected console statement.",
+        "line": 51,
+        "column": 5,
+        "nodeType": "MemberExpression",
+        "messageId": "unexpected",
+        "endLine": 51,
+        "endColumn": 16,
+        "suggestions": [
+          {
+            "messageId": "removeConsole",
+            "data": { "propertyName": "log" },
+            "fix": { "range": [1819, 1883], "text": "" },
+            "desc": "Remove the console.log()."
+          }
+        ]
+      },
+      {
+        "ruleId": "no-console",
+        "severity": 1,
+        "message": "Unexpected console statement.",
+        "line": 71,
+        "column": 5,
+        "nodeType": "MemberExpression",
+        "messageId": "unexpected",
+        "endLine": 71,
+        "endColumn": 16,
+        "suggestions": [
+          {
+            "messageId": "removeConsole",
+            "data": { "propertyName": "log" },
+            "fix": { "range": [2566, 2626], "text": "" },
+            "desc": "Remove the console.log()."
+          }
+        ]
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 2,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "import { Injectable, OnModuleInit, OnModuleDestroy } from '@nestjs/common';\nimport { PrismaClient } from '@prisma/client';\n\n/**\n * Servicio de Prisma ORM para la conexiÃ³n con la base de datos PostgreSQL\n *\n * Este servicio extiende `PrismaClient` y maneja el ciclo de vida de la conexiÃ³n\n * a la base de datos, conectÃ¡ndose automÃ¡ticamente al iniciar el mÃ³dulo y\n * desconectÃ¡ndose al destruirlo.\n *\n * @example\n * ```typescript\n * // InyecciÃ³n de dependencia en un servicio\n * constructor(private prisma: PrismaService) {}\n *\n * // Uso para consultas\n * const users = await this.prisma.user.findMany();\n * ```\n *\n * @remarks\n * - Utiliza el cliente Prisma generado a partir del schema.prisma\n * - Implementa `OnModuleInit` y `OnModuleDestroy` para gestiÃ³n automÃ¡tica\n * - Proporciona acceso a todas las operaciones CRUD de las 9 tablas del sistema\n *\n * @see {@link https://www.prisma.io/docs Prisma Documentation}\n * @see {@link https://docs.nestjs.com/recipes/prisma NestJS Prisma Recipe}\n */\n@Injectable()\nexport class PrismaService\n  extends PrismaClient\n  implements OnModuleInit, OnModuleDestroy\n{\n  /**\n   * Inicializa la conexiÃ³n con la base de datos cuando el mÃ³dulo se carga\n   *\n   * Este mÃ©todo es llamado automÃ¡ticamente por NestJS cuando el mÃ³dulo que\n   * contiene este servicio es inicializado. Establece la conexiÃ³n con\n   * PostgreSQL usando la URL definida en `DATABASE_URL`.\n   *\n   * @throws {Prisma.PrismaClientKnownRequestError} Si la conexiÃ³n falla\n   * @returns {Promise<void>} Promesa que se resuelve cuando la conexiÃ³n es exitosa\n   *\n   * @example\n   * ```typescript\n   * // La conexiÃ³n se establece automÃ¡ticamente al arrancar la aplicaciÃ³n\n   * await app.listen(3000); // onModuleInit se ejecuta antes\n   * ```\n   */\n  async onModuleInit(): Promise<void> {\n    await this.$connect();\n    console.log('PrismaService: ConexiÃ³n a PostgreSQL establecida');\n  }\n\n  /**\n   * Cierra la conexiÃ³n con la base de datos cuando el mÃ³dulo se destruye\n   *\n   * Este mÃ©todo es llamado automÃ¡ticamente por NestJS cuando la aplicaciÃ³n\n   * se estÃ¡ apagando. Cierra limpiamente la conexiÃ³n con PostgreSQL para\n   * evitar conexiones huÃ©rfanas y liberar recursos del sistema.\n   *\n   * @returns {Promise<void>} Promesa que se resuelve cuando la desconexiÃ³n es exitosa\n   *\n   * @example\n   * ```typescript\n   * // La desconexiÃ³n ocurre automÃ¡ticamente al cerrar la aplicaciÃ³n\n   * process.on('SIGTERM', () => app.close()); // onModuleDestroy se ejecuta despuÃ©s\n   * ```\n   */\n  async onModuleDestroy(): Promise<void> {\n    await this.$disconnect();\n    console.log('PrismaService: ConexiÃ³n a PostgreSQL cerrada');\n  }\n}\n",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Nightpass-sc\\apps\\api\\src\\shared\\validators\\is-before.validator.ts",
+    "messages": [
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 1,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 24,
+        "column": 25,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 24,
+        "endColumn": 28,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": { "range": [662, 665], "text": "unknown" },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": { "range": [662, 665], "text": "never" },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ]
+      },
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 1,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 26,
+        "column": 48,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 26,
+        "endColumn": 51,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": { "range": [801, 804], "text": "unknown" },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": { "range": [801, 804], "text": "never" },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ]
+      },
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 1,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 71,
+        "column": 25,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 71,
+        "endColumn": 28,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": { "range": [2178, 2181], "text": "unknown" },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": { "range": [2178, 2181], "text": "never" },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ]
+      },
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 1,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 73,
+        "column": 48,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 73,
+        "endColumn": 51,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": { "range": [2317, 2320], "text": "unknown" },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": { "range": [2317, 2320], "text": "never" },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ]
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 4,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "import {\n  registerDecorator,\n  ValidationOptions,\n  ValidationArguments,\n} from 'class-validator';\n\n/**\n * Valida que la propiedad sea anterior a otra propiedad especificada.\n * @param property - Nombre de la propiedad a comparar\n * @param validationOptions - Opciones de validaciÃ³n\n */\nexport function IsBefore(\n  property: string,\n  validationOptions?: ValidationOptions,\n) {\n  return function (object: object, propertyName: string) {\n    registerDecorator({\n      name: 'isBefore',\n      target: object.constructor,\n      propertyName: propertyName,\n      options: validationOptions,\n      constraints: [property],\n      validator: {\n        validate(value: any, args: ValidationArguments) {\n          const [relatedPropertyName] = args.constraints;\n          const relatedValue = (args.object as any)[relatedPropertyName];\n\n          // Si alguno de los valores es undefined, no validamos\n          if (value === undefined || relatedValue === undefined) {\n            return true;\n          }\n\n          // Convertir a Date si son strings\n          const date1 = new Date(value);\n          const date2 = new Date(relatedValue);\n\n          // Validar que sean fechas vÃ¡lidas\n          if (isNaN(date1.getTime()) || isNaN(date2.getTime())) {\n            return false;\n          }\n\n          // La fecha debe ser anterior a la fecha de referencia\n          return date1 < date2;\n        },\n        defaultMessage(args: ValidationArguments) {\n          const [relatedPropertyName] = args.constraints;\n          return `${args.property} debe ser anterior a ${relatedPropertyName}`;\n        },\n      },\n    });\n  };\n}\n\n/**\n * Valida que la propiedad sea posterior a otra propiedad especificada.\n * @param property - Nombre de la propiedad a comparar\n * @param validationOptions - Opciones de validaciÃ³n\n */\nexport function IsAfter(\n  property: string,\n  validationOptions?: ValidationOptions,\n) {\n  return function (object: object, propertyName: string) {\n    registerDecorator({\n      name: 'isAfter',\n      target: object.constructor,\n      propertyName: propertyName,\n      options: validationOptions,\n      constraints: [property],\n      validator: {\n        validate(value: any, args: ValidationArguments) {\n          const [relatedPropertyName] = args.constraints;\n          const relatedValue = (args.object as any)[relatedPropertyName];\n\n          // Si alguno de los valores es undefined, no validamos\n          if (value === undefined || relatedValue === undefined) {\n            return true;\n          }\n\n          // Convertir a Date si son strings\n          const date1 = new Date(value);\n          const date2 = new Date(relatedValue);\n\n          // Validar que sean fechas vÃ¡lidas\n          if (isNaN(date1.getTime()) || isNaN(date2.getTime())) {\n            return false;\n          }\n\n          // La fecha debe ser posterior a la fecha de referencia\n          return date1 > date2;\n        },\n        defaultMessage(args: ValidationArguments) {\n          const [relatedPropertyName] = args.constraints;\n          return `${args.property} debe ser posterior a ${relatedPropertyName}`;\n        },\n      },\n    });\n  };\n}\n",
+    "usedDeprecatedRules": []
+  }
+]
